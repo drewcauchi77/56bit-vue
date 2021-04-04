@@ -1,0 +1,66 @@
+.about-main{
+    .badges-section{
+        background: $gradient;
+        margin: 40px 0px;
+        .badges-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            max-width: 1100px;
+            .single-badge{
+                width: 30%;
+                padding: 15px 0px;
+                text-align: center;
+                a{
+                    img{
+                        height: 100%;
+                        max-height: 90px;
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointMedium){
+    .about-main{
+        .badges-section{
+            .badges-container{
+                .single-badge{
+                    width: 25%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .about-main{
+        .badges-section{
+            margin: 120px 0px;
+            .badges-container{
+                .single-badge{
+                    width: 15%;
+                    a{
+                        img{
+                            max-height: 110px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointXLarge){
+    .about-main{
+        .badges-section{
+            .badges-container{
+                .single-badge{
+                    width: 12%;
+                }
+            }
+        }
+    }
+}

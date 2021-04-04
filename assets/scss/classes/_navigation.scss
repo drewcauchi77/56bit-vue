@@ -1,0 +1,29 @@
+.navigation-link{
+    display: inline;
+    position: relative;
+    overflow: hidden;
+    &:after{
+        content: "";
+        position: absolute;
+        right: 0;
+        width: 0;
+        bottom: -5px;
+        background: $gradient;
+        height: 2px;
+        transition-property: width;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+    }
+    &:hover{
+        &:after{
+            left: 0;
+            right: auto;
+            width: 100%;
+        }
+    }
+}
+
+a{
+    outline: none;
+    text-decoration: none;
+}

@@ -1,0 +1,49 @@
+// Including the most important SCSS files of the site structure
+// Normalize CSS V8.0.1 - https://necolas.github.io/normalize.css/8.0.1/normalize.css
+@import "general/normalize";
+// SCSS Variables used - colours and breakpoints
+@import "general/variables";
+// Transition CSS between one page and another - needs to be called by transition type in pages
+// Header and Footer are not transitioned
+@import "general/page-transition";
+// Introduction part for pages - repeatable in multiple pages
+@import "general/introduction-section";
+
+// Main and most generic classes on the site - to implement DRY
+// Containers file incl. body, container class
+@import "classes/containers";
+// Heading file incl. h1, h2, h3
+@import "classes/headings";
+// Body text incl. p, span
+@import "classes/text";
+// Navigation including links on hover effect
+@import "classes/navigation";
+// Coloured buttons through the site incl. hover effect
+@import "classes/buttons";
+
+// Including sections that make the site functional
+// The scollbar changes in CSS
+@import "partials/scrollbar";
+// The header partial all throughout the site
+@import "partials/header";
+// The footer partial all throughout the site
+@import "partials/footer";
+
+// Sectional Components Styling
+@import "sections/testimonials";
+@import "sections/case-studies";
+
+// About Us Main Page
+@import "about-us-page/introduction";
+@import "about-us-page/founders";
+@import "about-us-page/our-team";
+@import "about-us-page/badges";
+
+// Services Main Page
+@import "services-page/introduction";
+@import "services-page/aws";
+@import "services-page/listings";
+
+// AWS Main Page
+@import "aws-page/introduction";
+@import "aws-page/content";

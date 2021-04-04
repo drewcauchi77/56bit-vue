@@ -1,0 +1,50 @@
+p, span, strong{
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    color: $white;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0px;
+    line-height: 20px;
+}
+
+strong{
+    font-weight: 700;
+}
+
+p{
+    padding-bottom: 20px;
+}
+
+ul, li{
+    padding: 0px;
+    margin: 0px;
+}
+
+.custom-list{
+    padding-bottom: 10px;
+    li{
+        list-style-image: url('~assets/images/icons/list-bullet.png');
+        margin-left: 20px;
+        &:last-child{
+            p{
+                padding-bottom: 0px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    p, span, strong{
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    p{
+        padding-bottom: 30px;
+    }
+
+    .custom-list{
+        padding-bottom: 30px;
+    }
+}

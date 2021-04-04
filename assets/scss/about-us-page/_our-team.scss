@@ -1,0 +1,56 @@
+.about-main{
+    .our-team-section{
+        .our-team-inner-container{
+            .our-team-container{
+                .our-team-title{
+                    padding-bottom: 30px;
+                }
+                .our-team-content{
+                    ul{
+                        li{
+                            p{
+                                a{
+                                    &:after{
+                                        background: $white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .about-main{
+        .our-team-section{
+            .our-team-inner-container{
+                .our-team-container{
+                    .our-team-title{
+                        padding-bottom: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointXLarge){
+    .about-main{
+        .our-team-section{
+            .our-team-inner-container{
+                background: url('~assets/images/about-us-page/our-team-background.png');
+                background-position: center;
+                background-size: cover;
+                .our-team-container{
+                    max-width: 940px;
+                    background-color: $black;
+                    width: 45%;
+                    padding: 75px;
+                }
+            }
+        }
+    }
+}

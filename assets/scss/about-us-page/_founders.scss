@@ -1,0 +1,279 @@
+.about-main{
+    .founders-section{
+        .founders-container{
+            padding-top: 80px;
+            .founders-title{
+                padding-bottom: 30px;
+            }
+            .founders-listing{
+                .single-founder{
+                    padding-bottom: 50px;
+                    margin: 0 auto;
+                    width: fit-content;
+                    .single-founder-content{
+                        .single-founder-image-section{
+                            height: 320px;
+                            position: relative;
+                            display: block;
+                            max-width: 300px;
+                            cursor: pointer;
+                            .single-founder-image{
+                                height: 100%;
+                                img{
+                                    height: 100%;
+                                    width: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+                            .single-founder-name{
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                margin: auto;
+                                height: 50px;
+                                background: $gradient;
+                                .name{
+                                    text-align: center;
+                                    line-height: 50px;
+                                }
+                            }
+                            .plus-symbol{
+                                position: absolute;
+                                border-radius: 50%;
+                                height: 40px;
+                                width: 40px;
+                                top: 8px;
+                                right: 8px;
+                                background: linear-gradient(to left, $violet 50%, $purple 50%) right;
+                                background-size: 200%;
+                                transition: 0.35s ease-out;
+                                .plus-text{
+                                    margin: 0 auto;
+                                    width: fit-content;
+                                    display: block;
+                                    font-size: 30px;
+                                    line-height: 38px;
+                                }
+                            }
+                            &:hover{
+                                .plus-symbol{
+                                    background-position: left;
+                                }
+                            }
+                        }
+                        .single-founder-body{
+                            height: 100vh;
+                            width: 100%;
+                            position: fixed;
+                            left: -150vw;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-color: $black;
+                            transition: 0.5s all;
+                            z-index: 999;
+                            .single-founder-body-content{
+                                padding: 30px 0px;
+                                position: relative;
+                                height: 100%;
+                                .content{
+                                    .close{
+                                        height: 40px;
+                                        width: 40px;
+                                        margin-left: auto;
+                                        position: relative;
+                                        cursor: pointer;
+                                        &:after{
+                                            position: absolute;
+                                            top: 0;
+                                            bottom: 0;
+                                            left: 0;
+                                            right: 0;
+                                            content: "\d7";
+                                            font-size: 55px; 
+                                            color: $white;
+                                            text-align: center;
+                                            height: fit-content;
+                                            margin: auto;
+                                        }
+                                    }
+                                    .information{
+                                        position: absolute;
+                                        top: 0;
+                                        bottom: 0;
+                                        left: 0;
+                                        right: 0;
+                                        margin: auto;
+                                        height: 80vh;
+                                        overflow-x: auto;
+                                        .info-title{
+                                            padding-bottom: 30px;
+                                        }
+                                    }
+                                }
+                            }
+                            &.show{
+                                left: 0;
+                            }
+                        }
+                    }
+                    &:last-child{
+                        padding-bottom: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointSmall){
+    .about-main{
+        .founders-section{
+            .founders-container{
+                .founders-listing{
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-column-gap: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointMedium){
+    .about-main{
+        .founders-section{
+            .founders-container{
+                .founders-listing{
+                    .single-founder{
+                        .single-founder-content{
+                            .single-founder-image-section{
+                                height: 400px;
+                                max-width: 380px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .about-main{
+        .founders-section{
+            .founders-container{
+                .founders-title{
+                    padding-bottom: 40px;
+                }
+                .founders-listing{
+                    display: block;
+                    .single-founder{
+                        padding-bottom: 140px;
+                        .single-founder-content{
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            grid-column-gap: 30px;
+                            .single-founder-image-section{
+                                grid-area: founderimage;
+                                cursor: default;
+                                height: 450px;
+                                max-width: none;
+                                align-self: center;
+                                justify-self: center;
+                                .single-founder-image{
+                                    img{
+                                        object-fit: unset;
+                                        width: auto;
+                                    }
+                                }
+                                .single-founder-name, .plus-symbol{
+                                    display: none;
+                                }
+                            }
+                            .single-founder-body{
+                                grid-area: founderbody;
+                                height: auto;
+                                width: auto;
+                                position: relative;
+                                left: 0;
+                                z-index: unset;
+                                background-color: transparent;
+                                align-self: center;
+                                .single-founder-body-content{
+                                    width: 100%;
+                                    max-width: none;
+                                    padding: 0px;
+                                    .content{
+                                        .close{
+                                            display: none;
+                                        }
+                                        .information{
+                                            height: auto;
+                                            width: auto;
+                                            position: relative;
+                                            left: initial;
+                                            right: initial;
+                                            top: initial;
+                                            bottom: initial;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(odd){
+                            .single-founder-content{
+                                grid-template-areas: 'founderbody founderimage';
+                            }
+                        }
+                        &:nth-child(even){
+                            .single-founder-content{
+                                grid-template-areas: 'founderimage founderbody';
+                            }
+                        }
+                        &:last-child{
+                            padding-bottom: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointXLarge){
+    .about-main{
+        .founders-section{
+            .founders-container{
+                padding-bottom: 140px;
+                .founders-listing{
+                    .single-founder{
+                        .single-founder-content{
+                            grid-column-gap: 50px;
+                            .single-founder-image-section{
+                                height: 600px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointXXLarge){
+    .about-main{
+        .founders-section{
+            .founders-container{
+                .founders-listing{
+                    .single-founder{
+                        .single-founder-content{
+                            grid-column-gap: 140px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

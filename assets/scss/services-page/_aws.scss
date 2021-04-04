@@ -1,0 +1,34 @@
+.services-main{
+    .aws-section{
+        position: relative;
+        height: 180px;
+        .aws-content{
+            margin: auto;
+            width: fit-content;
+            top: -30%;
+            position: relative;
+            a{
+                img{
+                    height: 180px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .services-main{
+        .aws-section{
+            height: 220px;
+            .aws-content{
+                top: -40%;
+                right: -20%;
+                a{
+                    img{
+                        height: 220px;
+                    }
+                }
+            }
+        }
+    }
+}

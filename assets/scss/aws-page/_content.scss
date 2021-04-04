@@ -1,0 +1,78 @@
+.aws-main{
+    .content-section{
+        .content-container{
+            .content-title{
+                padding-bottom: 30px;
+            }
+            img{
+                max-width: 320px;
+                width: 100%;
+                margin: 0 auto;
+                display: block;
+                padding-bottom: 30px;
+            }
+            .content{
+                .sub-title{
+                    font-size: 22px;
+                    font-style: italic;
+                    font-weight: 400;
+                    padding-bottom: 15px;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointMedium){
+    .aws-main{
+        .content-section{
+            .content-container{
+                img{
+                    margin: unset;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .aws-main{
+        .content-section{
+            .content-container{
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                grid-template-areas: 'contenttitle contentimage'
+                    'contenttext contentimage';
+                grid-column-gap: 30px;
+                .content-title{
+                    grid-area: contenttitle;
+                    padding-bottom: 60px;
+                }
+                img{
+                    grid-area: contentimage;
+                }
+                .content{
+                    grid-area: contenttext;
+                    .sub-title{
+                        padding-bottom: 30px;
+                    }
+                    .single-aws-button{
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointXLarge){
+    .aws-main{
+        .content-section{
+            .content-container{
+                grid-template-columns: 2.5fr 1fr;
+                grid-column-gap: 100px;
+            }
+        }
+    }
+}

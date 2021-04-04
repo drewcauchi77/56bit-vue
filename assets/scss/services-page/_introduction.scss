@@ -1,0 +1,37 @@
+.services-main{
+    .introduction-section{
+        background-image: url('~assets/images/services-page/services-background.png');
+        .introduction-inner-section{
+            .introduction-container{
+                .introduction-content{
+                    .introduction-body, .introduction-button{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .services-main{
+        .introduction-section{
+            .introduction-inner-section{
+                .introduction-container{
+                    .introduction-content{
+                        .introduction-title{
+                            padding-bottom: 40px;
+                        }
+                        .introduction-body{
+                            display: block;
+                            padding-bottom: 40px;
+                        }
+                        .introduction-button{
+                            display: block
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

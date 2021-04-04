@@ -1,0 +1,100 @@
+.about-main{
+    .introduction-section{
+        background-image: url('~assets/images/about-us-page/about-us-background.png');
+        background-position: center;
+        background-size: cover;
+        max-height: 550px;
+        height: auto;
+        transition: max-height 0.5s ease-out;
+        overflow: hidden;
+        .introduction-inner-section{
+            .introduction-container{
+                position: relative;
+                .introduction-content{
+                    .introduction-title{
+                        padding-bottom: 30px;
+                    }
+                    .introduction-body{
+                        position: relative;
+                        max-height: fit-content;
+                        transition: max-height 0.5s ease-out;
+                        overflow: hidden;
+                        .introduction-complete{
+                            display: none;
+                        }
+                        .read-more-button{
+                            display: grid;
+                            grid-template-columns: auto 20px;
+                            grid-column-gap: 15px;
+                            width: fit-content;
+                            cursor: pointer;
+                            .read-more-text, .read-less-text{
+                                display: inline;
+                                position: relative;
+                                overflow: hidden;
+                                &:after{
+                                    content: "";
+                                    position: absolute;
+                                    right: 0;
+                                    width: 0;
+                                    bottom: 0;
+                                    background: $white;
+                                    height: 2px;
+                                    transition-property: width;
+                                    transition-duration: 0.3s;
+                                    transition-timing-function: ease-out;
+                                }
+                            }
+                            .read-more-text{
+                                display: block;
+                                &.hide{
+                                    display: none;
+                                }
+                            }
+                            .read-less-text{
+                                display: none;
+                                &.show{
+                                    display: block;
+                                }
+                            }
+                            &:hover{
+                                .read-more-text, .read-less-text{
+                                    &:after{
+                                        left: 0;
+                                        right: auto;
+                                        width: 100%;
+                                    }
+
+                                }
+                            }
+                        }
+                        &.more{
+                            transition: max-height 0.5s ease-in;
+                            .introduction-complete{
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                .scroll-down{
+                    &:hover{
+                        transform: rotate(135deg) scale(1.3);
+                    }
+                }
+            }
+        }
+        &.height{
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .about-main{
+        .introduction-section{
+            height: auto;
+            background-size: 150%;
+        }
+    }
+}

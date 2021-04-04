@@ -1,0 +1,37 @@
+.page-content{
+    .introduction-section{
+        height: 400px;
+        background-position: 60%;
+        background-size: cover;
+        .introduction-inner-section{
+            background: linear-gradient(360deg, #17181D 0%, rgba(23, 24, 29, 0.4) 100%);
+            height: 100%;
+            position: relative;
+            .introduction-container{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                height: fit-content;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .page-content{
+        .introduction-section{
+            height: 500px;
+            .introduction-inner-section{
+                background: linear-gradient(360deg, #17181D 0%, rgba(23, 24, 29, 0.2) 100%);
+                .introduction-container{
+                    .introduction-content{
+                        width: 60%;
+                    }
+                }
+            }
+        }
+    }
+}

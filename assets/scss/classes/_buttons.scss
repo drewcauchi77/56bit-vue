@@ -1,0 +1,70 @@
+.button{
+    height: 40px;
+    width: 180px;
+    background: linear-gradient(to left, $violet 50%, $purple 50%) right;
+    background-size: 200%;
+    border-radius: 50px;
+    transition: 0.35s ease-out;
+    margin-top: 15px;
+    a{
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: relative;
+        .button-text{
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: fit-content;
+            width: fit-content;
+        }
+    }
+    &:hover{
+        background-position: left;
+    }
+}
+
+.rotator{
+    height: 5px;
+    width: 5px;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    transform: rotate(135deg);
+    align-self: center;
+    justify-self: center;
+    transition: 0.5s all;
+    &.rotated{
+        transform: rotate(315deg);
+    }
+}
+
+.scroll-down{
+    height: 16px;
+    width: 16px;
+    border-width: 3px;
+    margin: 0 auto;
+    margin-top: 70px;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .button{
+        height: 50px;
+        width: 220px;
+        a{
+            .button-text{
+                font-size: 14px;
+            }
+        }
+    }
+
+    .scroll-down{
+        display: none;
+    }
+}

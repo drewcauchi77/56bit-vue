@@ -1,0 +1,33 @@
+.aws-main{
+    .introduction-section{
+        background-image: url('~assets/images/aws-page/aws-background.png');
+        .introduction-inner-section{
+            .introduction-container{
+                .introduction-content{
+                    .introduction-title{
+                        padding-bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .aws-main{
+        .introduction-section{
+            .introduction-inner-section{
+                .introduction-container{
+                    .introduction-content{
+                        .introduction-title{
+                            padding-bottom: 40px;
+                        }
+                        .introduction-body{
+                            padding-bottom: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

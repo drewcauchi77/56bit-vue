@@ -1,0 +1,23 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/apollo": "^4.0.1-rc.5",
+    "@nuxtjs/axios": "^5.12.5",
+    "core-js": "^3.8.3",
+    "graphql-tag": "^2.11.0",
+    "nuxt": "^2.14.12",
+    "vue-slick-carousel": "^1.0.6"
+  },
+  "devDependencies": {
+    "sass": "^1.32.2",
+    "sass-loader": "^10.1.0"
+  }
+}

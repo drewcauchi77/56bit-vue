@@ -1,0 +1,94 @@
+.services-main{
+    .services-section{
+        .services-container{
+            border-bottom: 1px solid $white;
+            padding-top: 50px;
+            margin-top: -50px;
+            .single-service-details{
+                padding-top: 80px;
+                .single-service-content{
+                    .single-service-title{
+                        padding-bottom: 20px;
+                    }
+                    .single-service-button{
+                        width: 220px;
+                    }
+                }
+                &:first-child{
+                    padding-top: 30px;
+                    border-top: 1px solid $white;
+                }
+                .single-service-image{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .services-main{
+        .services-section{
+            .services-container{
+                padding-top: 100px;
+                margin-top: -100px;
+                .single-service-details{
+                    padding-top: 150px;
+                    .single-service-content{
+                        .single-service-title{
+                            padding-bottom: 40px;
+                        }
+                        .single-service-button{
+                            width: 340px;
+                        }
+                    }
+                    &:first-child{
+                        padding-top: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointXLarge){
+    .services-main{
+        .services-section{
+            .services-container{
+                .single-service-details{
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-column-gap: 50px;
+                    .single-service-content{
+                        align-self: center;
+                    }
+                    .single-service-image{
+                        display: block;
+                        align-self: center;
+                    }
+                }
+                .content-right{
+                    grid-template-areas: 'img details';
+                    .single-service-content{
+                        grid-area: details;
+                    }
+                    .single-service-image{
+                        grid-area: img;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointXXLarge){
+    .services-main{
+        .services-section{
+            .services-container{
+                .single-service-details{
+                    grid-column-gap: 140px;
+                }
+            }
+        }
+    }
+}

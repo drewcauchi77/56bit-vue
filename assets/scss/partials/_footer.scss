@@ -1,0 +1,257 @@
+.footer-section{
+    .footer-container{
+        .footer-inner-container{
+            padding-top: 30px;
+            border-top: 1px solid $white;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-row-gap: 30px;
+            align-content: center;
+            grid-column-gap: 20px;
+            grid-template-areas: 'logo social'
+                'legal contact'
+                'copyright copyright'
+                'steves steves';
+            .logo-section{
+                grid-area: logo;
+                width: 130px;
+                align-self: center;
+                justify-self: center;
+                svg{
+                    height: 100%;
+                    width: 130px;
+                }
+            }
+            .social-section{
+                grid-area: social;
+                display: grid;
+                grid-template-columns: repeat(3, 34px);
+                grid-column-gap: 10px;
+                align-content: center;
+                justify-content: center;
+                .social-item{
+                    height: 34px;
+                    border-radius: 50%;
+                    background: linear-gradient(to left, $violet 50%, $purple 50%) right;
+                    background-size: 200%;
+                    transition: 0.35s ease-out;
+                    a{
+                        height: 100%;
+                        width: 100%;
+                        display: block;
+                        position: relative;
+                        svg{
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            height: 100%;
+                        }
+                    }
+                    &:hover{
+                        background-position: left;
+                    }
+                }
+            }
+            .navigation-section{
+                .navigation-section-title{
+                    margin: 0 auto;
+                    width: fit-content;
+                }
+            }
+            .links-section{
+                display: none;
+                grid-area: links;
+            }
+            .legal-section{
+                position: relative;
+                grid-area: legal;
+                .legal-section-title{
+                    display: grid;
+                    grid-template-columns: auto 10px;
+                    justify-content: center;
+                    grid-column-gap: 10px;
+                    cursor: pointer;
+                }
+                .legal-section-navigation{
+                    background: $gradient;
+                    list-style-type: none;
+                    position: absolute;
+                    top: 95px;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    display: none;
+                    height: fit-content;
+                    padding: 15px 10px;
+                    width: fit-content;
+                    .navigation-item{
+                        width: 100%;
+                        .navigation-link{
+                            &:after{
+                                background: $white;
+                            }
+                        }
+                        &:first-child{
+                            padding-bottom: 10px;
+                        }
+                    }
+                    &.open{
+                        display: block;
+                    }
+                }
+            }
+            .contact-section{
+                grid-area: contact;
+                .contact-details{
+                    display: none;
+                }
+            }
+            .copyright-section{
+                grid-area: copyright;
+                border-top: 1px solid $white;
+                .copyright-text{
+                    display: block;
+                    padding-top: 30px;
+                    text-align: center;
+                    font-weight: 300;
+                }
+            }
+            .steves-section{
+                grid-area: steves;
+                display: grid;
+                grid-template-rows: 30px auto;
+                width: fit-content;
+                margin: 0 auto;
+                .steves-text{
+                    font-weight: 300;
+                    font-size: 10px;
+                    align-self: center;
+                    justify-self: center;
+                }
+                a{
+                    height: fit-content;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .footer-section{
+        .footer-container{
+            .footer-inner-container{
+                grid-template-areas: 'logo links legal contact'
+                    'copyright links legal contact'
+                    'social links legal contact'
+                    'steves steves steves steves';
+                padding: 80px 5% 0px 5%;
+                grid-row-gap: 40px;
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+                .logo-section{
+                    width: 200px;
+                    justify-self: start;
+                    svg{
+                        width: 200px;
+                    }
+                }
+                .links-section{
+                    display: block;
+                }
+                .contact-section{
+                    .contact-details{
+                        display: grid;
+                        grid-template-rows: repeat(3, 1fr);
+                    }
+                }
+                .copyright-section{
+                    border-top: none;
+                    .copyright-text{
+                        padding-top: 0px;
+                        font-size: 14px;
+                        text-align: left;
+                    }
+                }
+                .social-section{
+                    justify-content: start;
+                    grid-column-gap: 15px;
+                }
+                .steves-section{
+                    grid-template-columns: 1fr 1fr;
+                    margin-right: 0;
+                    .steves-text{
+                        font-size: 12px;
+                        padding-bottom: 8px;
+                    }
+                }
+                .legal-section{
+                    .legal-section-title{
+                        cursor: default;
+                        .rotator{
+                            display: none;
+                        }
+                    }
+                    .legal-section-navigation{
+                        display: block;
+                        position: relative;
+                        background: transparent;
+                        top: 0px;
+                    }
+                }
+                .navigation-section{
+                    .navigation-section-title{
+                        margin: 0;
+                        padding-bottom: 35px;
+                    }
+                    .navigation{
+                        padding: 0px;
+                        margin: 0px;
+                        list-style-type: none;
+                        .navigation-item{
+                            padding-bottom: 10px;
+                            a{
+                                span{
+                                    font-weight: 300;
+                                }
+                                &:after{
+                                    background: $gradient !important;
+                                }
+                            }
+                        }
+                    }
+                }
+                .contact-section{
+                    .contact-details{
+                        grid-row-gap: 10px;
+                        .contact-details-title{
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointXLarge){
+    .footer-section{
+        .footer-container{
+            .footer-inner-container{
+                grid-template-columns: 3fr 1fr 1fr 1fr;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointXXLarge){
+    .footer-section{
+        .footer-container{
+            .footer-inner-container{
+                grid-template-columns: 4fr 1fr 1fr 1fr;
+            }
+        }
+    }
+}
