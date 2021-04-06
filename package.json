@@ -1,11 +1,17 @@
 {
   "name": "frontend",
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "8080"
+    }
+  },
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "yarn run build",
-    "start": "yarn run start -- --hostname 0.0.0.0 --port 8080",
+    "build": "nuxt build",
+    "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
