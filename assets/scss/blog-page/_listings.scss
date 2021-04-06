@@ -1,0 +1,35 @@
+.blog-main{
+    .listings-section{
+        .listings-container{
+            padding-top: 30px;
+            .listings-title{
+                padding-bottom: 30px;
+            }
+            .listings{
+                .single-blog{
+                    .single-image{
+                        height: 300px;
+                        padding-bottom: 15px;
+                        .single-image-link{
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                    .single-blog-details{
+                        .single-title{
+                            padding-bottom: 30px;
+                        }
+                    }
+                    &:not(:last-child){
+                        padding-bottom: 30px;
+                        margin-bottom: 30px;
+                        border-bottom: 1px solid $white;
+                    }
+                }
+            }
+        }
+    }
+}

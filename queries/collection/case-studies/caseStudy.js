@@ -8,11 +8,12 @@ export const caseStudyQuery = gql`
             id
             slug
             CaseStudyTitle
-            CaseStudyExcerpt
-            ClientFeaturedImage{
+            ClientName
+            ContentBackgroundImage{
                 url
                 alternativeText
             }
+            CaseStudyContent
         }
     }
 `

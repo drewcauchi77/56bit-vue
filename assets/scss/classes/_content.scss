@@ -1,0 +1,107 @@
+.post-container{
+    max-width: 940px;
+    margin: 0 auto;
+    .go-back-button{
+        display: grid;
+        grid-template-columns: 15px auto;
+        grid-column-gap: 10px;
+        cursor: pointer;
+        width: fit-content;
+        margin-bottom: 40px;
+        .rotator{
+            transform: rotate(225deg) !important;
+            height: 7px;
+            width: 7px;
+        }
+        .go-back-text{
+            display: inline;
+            position: relative;
+            overflow: hidden;
+            font-size: 12px;
+            &:after{
+                content: "";
+                position: absolute;
+                right: 0;
+                width: 0;
+                bottom: 0;
+                background: $white;
+                height: 2px;
+                transition-property: width;
+                transition-duration: 0.3s;
+                transition-timing-function: ease-out;
+            }
+        }
+        &:hover{
+            .go-back-text{
+                &:after{
+                    left: 0;
+                    right: auto;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .title{
+        padding-bottom: 30px;
+    }
+    .post-content{
+        h2, h3{
+            padding-bottom: 15px;
+        }
+        p{
+            img{
+                width: 100%;
+            }
+            em{
+                font-size: 22px;
+                padding-bottom: -15px;
+            }
+            a{
+                color: $white;
+                text-decoration: underline;
+            }
+        }
+        ul{
+            padding-bottom: 10px;
+            li{
+                list-style-image: url('~assets/images/icons/list-bullet.png');
+                margin-left: 20px;
+                padding-bottom: 15px;
+                font-family: Roboto, sans-serif;
+                font-style: normal;
+                color: $white;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .post-container{
+        padding-bottom: 25px;
+        .go-back-button{
+            .go-back-text{
+                font-size: 14px;
+            }
+        }
+        .title{
+            padding-bottom: 60px;
+        }
+        .post-content{
+            h2, h3{
+                padding-bottom: 30px;
+            }
+            p{
+                padding-bottom: 40px;
+            }
+            ul{
+                li{
+                    font-size: 18px;
+                    padding-bottom: 30px;
+                }
+            }
+        }
+    }
+}

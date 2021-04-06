@@ -20,6 +20,8 @@
 @import "classes/navigation";
 // Coloured buttons through the site incl. hover effect
 @import "classes/buttons";
+// The content sections mainly used for Blogs and Case Studies
+@import "classes/content";
 
 // Including sections that make the site functional
 // The scollbar changes in CSS
@@ -43,6 +45,16 @@
 @import "services-page/introduction";
 @import "services-page/aws";
 @import "services-page/listings";
+
+// Case Studies Main Page
+@import "case-studies-page/introduction";
+@import "case-studies-page/listings";
+
+// Single Case Study Page
+@import "single-case-study-page/introduction";
+
+// Main Blog Page
+@import "blog-page/listings";
 
 // AWS Main Page
 @import "aws-page/introduction";

@@ -1,6 +1,6 @@
 export default {
   env: {
-    strapiBaseUri: process.env.API_URL || "http://localhost:1337"
+    strapiBaseUri: process.env.API_URL || "http://159.89.105.165"
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -50,12 +50,12 @@ export default {
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: "http://localhost:1337/graphql"
+        httpEndpoint: "http://159.89.105.165/graphql"
       }
     }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
 }

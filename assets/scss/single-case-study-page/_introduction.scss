@@ -1,0 +1,33 @@
+.single-case-study-main{
+    .introduction-section{
+        .introduction-inner-section{
+            .introduction-container{
+                .introduction-content{
+                    .introduction-body{
+                        padding-bottom: 15px;
+                        font-size: 24px;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .single-case-study-main{
+        .introduction-section{
+            .introduction-inner-section{
+                .introduction-container{
+                    .introduction-content{
+                        width: 100%;
+                        .introduction-body{
+                            font-size: 30px;
+                            padding-bottom: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

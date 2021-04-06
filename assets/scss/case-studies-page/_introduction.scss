@@ -1,0 +1,21 @@
+.case-studies-main{
+    .introduction-section{
+        background-image: url('~assets/images/case-studies-page/case-studies-background.png');
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .case-studies-main{
+        .introduction-section{
+            .introduction-inner-section{
+                .introduction-container{
+                    .introduction-content{
+                        .introduction-title{
+                            padding-bottom: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

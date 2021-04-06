@@ -1,15 +1,6 @@
 <template>
-    <main role="main" class="page-content single-case-study-main">
-        <section class="introduction-section" v-if="caseStudies.ContentBackgroundImage" v-bind:style="{ 'background-image': 'url(' + api_url + caseStudies.ContentBackgroundImage.url + ')' }">
-            <div class="introduction-inner-section">
-                <div class="container introduction-container">
-                    <div class="introduction-content">
-                        <span class="introduction-body">{{ caseStudies.ClientName }} Case Study</span>
-
-                        <h1 class="introduction-title">{{ caseStudies.CaseStudyTitle }}</h1>
-                    </div>
-                </div>
-            </div>
+    <main role="main" class="page-content single-blog-main">
+        <section class="introduction-section" v-if="blogs.BlogFeaturedImage" v-bind:style="{ 'background-image': 'url(' + api_url + blogs.BlogFeaturedImage.url + ')' }">
         </section>
 
         <section class="post-section">
@@ -19,7 +10,9 @@
                     <span class="go-back-text">Back</span>
                 </div>
 
-                <div class="post-content" v-if="caseStudies.CaseStudyContent" v-html="caseStudies.CaseStudyContent"></div>
+                <h1 class="title">{{ blogs.BlogPostTitle }}</h1>
+
+                <div class="post-content" v-if="blogs.BlogContent" v-html="blogs.BlogContent"></div>
             </div>
         </section>
     </main>
@@ -28,26 +21,26 @@
 <script>
 // Getting the single case study from the query in caseStudy.js according to the slug passed in the graphql
 // This will be a data array within the apollo query below 
-import { caseStudyQuery } from '~/queries/collection/case-studies/caseStudy'
+import { blogQuery } from '~/queries/collection/blog/blog'
 
 export default {
     transition: 'slide-bottom',
     data:() => ({
         // Returning the data short notation, an array with 1 value according to the where slug condition in caseStudy.js
-        caseStudies: {},
+        blogs: {},
         api_url: process.env.strapiBaseUri,
     }),
     apollo: {
-        caseStudies: {
+        blogs: {
             // Making the obtaining condition faster
             prefetch: true,
-            query: caseStudyQuery,
+            query: blogQuery,
             // Passing the variable slug to the graphql condition
             variables () {
                 return { slug: this.$route.params.slug }
             },
             // The data to be returned is updated with the first value since there would be only one case study with a specific slug
-            update: data => data.caseStudies[0]
+            update: data => data.blogs[0]
         }
     },
     // computed: {
@@ -55,7 +48,7 @@ export default {
         // The images without API url would return of the current website
         // cleanContent : function () {
             // Search for uploads and attach api_url to it - then v-html back the content 
-            // return this.caseStudies.CaseStudyContent.split('/uploads/').join(`${this.api_url}/uploads/`)
+            // return this.blogs.BlogContent.split('/uploads/').join(`${this.api_url}/uploads/`)
         // }
     // },
     methods: {

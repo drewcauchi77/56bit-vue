@@ -12,7 +12,7 @@
         </div>
 
         <div class="case-studies-listings">
-            <VueSlickCarousel v-bind="settingsOne">
+            <VueSlickCarousel v-bind="settings" v-if="caseStudies.length">
                 <NuxtLink v-for="caseStudy in caseStudies" :key="caseStudy.slug" :to="{ name: 'case-studies-slug', params: {slug: caseStudy.slug} }" class="single-case-link">
                     <img :src="api_url + caseStudy.ClientFeaturedImage.url" :alt="caseStudy.ClientFeaturedImage.alternativeText" class="single-case-study-image">
                     <h3 class="single-case-study-title">{{ caseStudy.CaseStudyTitle }}</h3>
@@ -35,6 +35,7 @@
 // This will be a data array within the apollo query below
 import { caseStudiesQuery } from '~/queries/collection/case-studies/caseStudies'
 
+// Slick slider components and importation
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
@@ -45,9 +46,11 @@ export default {
     },
     data() {
         return {
+            // Pre render caseStudies array to eliminate Slick Slider rendering with no children
+            caseStudies: [],
             // The api url called from nuxt.config file to get the images from
             api_url: process.env.strapiBaseUri,
-            settingsOne: {
+            settings: {
                 arrows: true,
                 dots: false,
                 autoplay: true,
@@ -81,10 +84,14 @@ export default {
         }
     },
     apollo: {
-        // The query that has been imported in array form caseStudies
         // This is looped to get each value from the loop in the NuxtLink above by parameter slug for the url
         caseStudies: {
+            // Prefetch to eliminate issue that Slick Slider renders with no children
+            prefetch: true,
+            // The query that has been imported in array form caseStudies
             query: caseStudiesQuery,
+            // Updating the data that is passed to rendered variable above
+            update: data => data.caseStudies
         }
     }
 }
