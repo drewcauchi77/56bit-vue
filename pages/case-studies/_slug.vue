@@ -19,7 +19,7 @@
                     <span class="go-back-text">Back</span>
                 </div>
 
-                <div class="post-content" v-if="caseStudies.CaseStudyContent" v-html="caseStudies.CaseStudyContent"></div>
+                <div class="post-content" v-if="caseStudies.CaseStudyContent" v-html="cleanContent"></div>
             </div>
         </section>
     </main>
@@ -50,14 +50,14 @@ export default {
             update: data => data.caseStudies[0]
         }
     },
-    // computed: {
+    computed: {
         // Since the content is a chunk and images are to be included in the content, we would need to include the API url
         // The images without API url would return of the current website
-        // cleanContent : function () {
+        cleanContent : function () {
             // Search for uploads and attach api_url to it - then v-html back the content 
-            // return this.caseStudies.CaseStudyContent.split('/uploads/').join(`${this.api_url}/uploads/`)
-        // }
-    // },
+            return this.caseStudies.CaseStudyContent.split('/uploads/').join(`${this.api_url}/uploads/`)
+        }
+    },
     methods: {
         // Method called by the click of the Back button which sends the router back in history to get the last page before
         goBack() {
