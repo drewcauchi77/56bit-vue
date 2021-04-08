@@ -1,0 +1,35 @@
+.home-main{
+    .aws-section{
+        position: relative;
+        height: 180px;
+        padding: 30px 0px;
+        .aws-content{
+            margin: auto;
+            width: fit-content;
+            position: relative;
+            a{
+                img{
+                    height: 180px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .home-main{
+        .aws-section{
+            height: 220px;
+            padding: 0px;
+            .aws-content{
+                top: -40%;
+                right: -20%;
+                a{
+                    img{
+                        height: 220px;
+                    }
+                }
+            }
+        }
+    }
+}

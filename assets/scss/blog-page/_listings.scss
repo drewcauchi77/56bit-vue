@@ -6,10 +6,18 @@
                 padding-bottom: 30px;
             }
             .listings{
+                position: relative;
+                max-height: fit-content;
+                transition: max-height 0.5s ease-out;
+                overflow: hidden;
                 .single-blog{
+                    display: grid;
+                    grid-template-rows: 300px 220px;
+                    grid-row-gap: 15px;
+                    max-width: 490px;
+                    margin: 0 auto;
                     .single-image{
                         height: 300px;
-                        padding-bottom: 15px;
                         .single-image-link{
                             img{
                                 width: 100%;
@@ -19,6 +27,7 @@
                         }
                     }
                     .single-blog-details{
+                        align-self: center;
                         .single-title{
                             padding-bottom: 30px;
                         }
@@ -28,6 +37,114 @@
                         margin-bottom: 30px;
                         border-bottom: 1px solid $white;
                     }
+                    &:nth-child(n+5){
+                        display: none;
+                    }
+                }
+                .load-more-button{
+                    display: grid;
+                    grid-template-columns: auto 20px;
+                    grid-column-gap: 15px;
+                    width: fit-content;
+                    cursor: pointer;
+                    margin: 0 auto;
+                    .load-more-text, .load-less-text{
+                        display: inline;
+                        position: relative;
+                        overflow: hidden;
+                        &:after{
+                            content: "";
+                            position: absolute;
+                            right: 0;
+                            width: 0;
+                            bottom: 0;
+                            background: $white;
+                            height: 2px;
+                            transition-property: width;
+                            transition-duration: 0.3s;
+                            transition-timing-function: ease-out;
+                        }
+                    }
+                    .load-more-text{
+                        display: block;
+                        &.hide{
+                            display: none;
+                        }
+                    }
+                    .load-less-text{
+                        display: none;
+                        &.show{
+                            display: block;
+                        }
+                    }
+                }
+                &.load{
+                    transition: max-height 0.5s ease-in;
+                    .single-blog{
+                        &:nth-child(n+5){
+                            display: grid;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointMedium){
+    .blog-main{
+        .listings-section{
+            .listings-container{
+                .listings{
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-column-gap: 30px;
+                    grid-row-gap: 60px;
+                    .single-blog{
+                        border-bottom: none !important;
+                        padding-bottom: 0px !important;
+                        margin-bottom: 0px !important;
+                        &:nth-child(n+5){
+                            display: grid;
+                        }
+                    }
+                    .load-more-button{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .blog-main{
+        .listings-section{
+            .listings-container{
+                .listings-title{
+                    padding-bottom: 80px;
+                }
+                .listings{
+                    .single-blog{
+                        grid-template-rows: 280px auto;
+                        grid-row-gap: 30px;
+                        .single-image{
+                            height: 280px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointXLarge){
+    .blog-main{
+        .listings-section{
+            .listings-container{
+                .listings{
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-row-gap: 90px;
                 }
             }
         }

@@ -6,7 +6,7 @@
           <h1 class="page-title">Blog</h1>
         </div>
 
-        <div class="listings">
+        <div class="listings" :class="{ load: loadMore}">
           <div class="single-blog" v-for="blog in blogs" :key="blog.slug">
             <div class="single-image">
               <NuxtLink :to="{ name: 'blog-slug', params: {slug: blog.slug} }" class="single-image-link">
@@ -28,6 +28,12 @@
               </div>
             </div>
           </div>
+
+          <div class="load-more-button" @click="loadMore = !loadMore">
+            <span class="load-more-text" :class="{ hide: loadMore }">Load more</span>
+            <span class="load-less-text" :class="{ show: loadMore }">Load less</span>
+            <div class="rotator" :class="{ rotated: loadMore }"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -43,7 +49,9 @@ export default {
     transition: 'slide-bottom',
     data() {
         return {
+            // To keep the blogs list after rendering
             blogs: [],
+            loadMore: false,
             // The api url called from nuxt.config file to get the images from
             api_url: process.env.strapiBaseUri,
         }

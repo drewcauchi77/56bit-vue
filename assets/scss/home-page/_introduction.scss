@@ -1,0 +1,51 @@
+.home-main{
+    .introduction-section{
+        background-image: url('~assets/images/services-page/services-background.png');
+        height: 500px;
+        .introduction-inner-section{
+            .introduction-container{
+                .introduction-content{
+                    .introduction-title{
+                        padding-bottom: 20px;
+                    }
+                    .introduction-body{
+                        padding-bottom: 15px;
+                        max-width: 750px;
+                        .separator{
+                            color: $violet;
+                        }
+                        span{
+                            font-size: 20px;
+                            display: inline-block;
+                            line-height: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .home-main{
+        .introduction-section{
+            .introduction-inner-section{
+                .introduction-container{
+                    .introduction-content{
+                        width: 100%;
+                        .introduction-title{
+                            padding-bottom: 40px;
+                        }
+                        .introduction-body{
+                            padding-bottom: 40px;
+                            span{
+                                font-size: 30px;
+                                line-height: 50px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,156 @@
+.home-main{
+    .technical-section{
+        .technical-container{
+            .technical-title{
+                padding-bottom: 30px;
+            }
+            .technical-list{
+                .slick-slider{
+                    .single-technical{
+                        height: 300px;
+                        border: 1px solid $white;
+                        width: 96% !important;
+                        transition: 0.5s all;
+                        position: relative;
+                        .single-technical-content{
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            width: 80%;
+                            height: fit-content;
+                            .technical-icon{
+                                padding-bottom: 15px;
+                                text-align: center;
+                            }
+                            .technical-title{
+                                padding-bottom: 15px;
+                                text-align: center;
+                            }
+                            .technical-text{
+                                padding-bottom: 0px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                    .slick-arrow{
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        height: fit-content;
+                        border-radius: 50%;
+                        background: linear-gradient(to left, $violet 50%, $purple 50%) right;
+                        background-size: 200%;
+                        transition: 0.35s ease-out;
+                        height: 30px;
+                        width: 30px;
+                        z-index: 2;
+                        &:before{
+                            line-height: 11px;
+                        }
+                        &:hover{
+                            background-position: left;
+                        }
+                    }
+                    .slick-prev{
+                        left: -15px;
+                        right: unset;
+                        &:before{
+                            content: '\276E';
+                        }
+                    }
+                    .slick-next{
+                        right: -15px;
+                        left: unset;
+                        &:before{
+                            content: '\276F';
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointMedium){
+    .home-main{
+        .technical-section{
+            .technical-container{
+                .technical-list{
+                    .slick-slider{
+                        .single-technical{
+                            width: 90% !important;
+                            margin-left: 5%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .home-main{
+        .technical-section{
+            .technical-container{
+                padding-bottom: 140px;
+                .technical-title{
+                    padding-bottom: 80px;
+                    text-align: center;
+                }
+                .technical-list{
+                    .slick-slider{
+                        .single-technical{
+                            height: 400px;
+                            .single-technical-content{
+                                .technical-icon{
+                                    padding-bottom: 30px;
+                                    text-align: left;
+                                }
+                                .technical-title{
+                                    padding-bottom: 30px;
+                                    text-align: left;
+                                }
+                                .technical-text{
+                                    text-align: left;
+                                }
+                            }
+                        }
+                        .slick-arrow{
+                            height: 40px;
+                            width: 40px;
+                            top: 30px;
+                        }
+                        .slick-prev{
+                            left: -40px;
+                        }
+                        .slick-next{
+                            right: -40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointXXLarge){
+    .home-main{
+        .technical-section{
+            .technical-container{
+                .technical-list{
+                    .slick-slider{
+                        .slick-prev{
+                            left: -50px;
+                        }
+                        .slick-next{
+                            right: -50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

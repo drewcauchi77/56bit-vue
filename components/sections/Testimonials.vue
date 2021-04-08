@@ -69,7 +69,6 @@ export default {
                 slidesToShow: 2,
                 slidesToScroll: 1,
                 infinite: true,
-                pauseOnHover: true,
                 responsive: [
                     {
                         breakpoint: 991,
