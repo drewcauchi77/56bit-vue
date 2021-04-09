@@ -1,0 +1,17 @@
+.home-main{
+    .case-studies-section{
+        .case-studies-container{
+            padding-bottom: 40px;
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .home-main{
+        .case-studies-section{
+            .case-studies-container{
+                padding-bottom: 75px;
+            }
+        }
+    }
+}

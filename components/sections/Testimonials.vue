@@ -65,7 +65,7 @@ export default {
                 arrows: true,
                 dots: false,
                 autoplay: true,
-                autoplaySpeed: 6000,
+                autoplaySpeed: 10000,
                 slidesToShow: 2,
                 slidesToScroll: 1,
                 infinite: true,

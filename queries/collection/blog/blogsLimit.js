@@ -8,6 +8,7 @@ export const blogsLimitQuery = gql`
             id
             slug
             BlogPostTitle
+            BlogPostExcerpt
             BlogFeaturedImage{
                 url
                 alternativeText

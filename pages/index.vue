@@ -43,8 +43,8 @@
     </section>
 
     <section class="services-section">
-        <div class="container services-container">
-            <h2 class="services-title">56Bit Services</h2>
+        <div class="services-container">
+            <h2 class="container services-title">56Bit Services</h2>
 
             <div class="services-list">
               <VueSlickCarousel v-bind="settingsOne">
@@ -149,8 +149,8 @@
     </section>
 
     <section class="technical-section">
-      <div class="container technical-container">
-        <h2 class="technical-title">Our Technical Credo</h2>
+      <div class="technical-container">
+        <h2 class="container technical-title">Our Technical Credo</h2>
 
         <div class="technical-list">
             <VueSlickCarousel v-bind="settingsTwo">
@@ -223,6 +223,80 @@
         <span class="tagline-text">We seek to build a relationship based on trust with our clients. We do this by ensuring that all communications and dealings are transparent, open and honest.</span>
       </div>
     </section>
+
+    <section class="expertise-section">
+      <div class="container expertise-container">
+        <div class="expertise-details">
+          <h2 class="expertise-title">Qualified AWS expertise at your service</h2>
+
+          <p class="expertise-content">Our partnership with Amazon Web Services provides additional quality and value to our clients. At 56Bit, AWS gurus exceed client expectations with their value delivery. With the additional backup and support from Amazon Web Services, new heights are achieved in both service delivery and customer engagement.</p>
+
+          <div class="expertise-button button">
+            <NuxtLink to="/aws">
+              <span class="button-text">Discover More</span>
+            </NuxtLink>
+          </div>
+        </div>
+
+        <div class="expertise-image">
+          <NuxtLink to="/aws">
+            <img src="~/assets/images/badges/aws-consulting-partner.png" alt="AWS Consulting Partner">
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <section class="awards-section">
+        <div class="awards-container">
+            <h2 class="container awards-title">Awards</h2>
+
+            <div class="awards-list">
+              <VueSlickCarousel v-bind="settingsThree">
+                <div class="single-awards">
+                  <div class="single-awards-content">
+                      <div class="award-icon">
+                        <PagesHomeAwardsAward />
+                      </div>
+                      <h3 class="award-title">Lorem ipsum dolor sit amet consectetur.</h3>
+                  </div>
+                </div>
+
+                <div class="single-awards">
+                  <div class="single-awards-content">
+                      <div class="award-icon">
+                        <PagesHomeAwardsAward />
+                      </div>
+                      <h3 class="award-title">Lorem ipsum dolor sit amet consectetur.</h3>
+                  </div>
+                </div>
+
+                <div class="single-awards">
+                  <div class="single-awards-content">
+                      <div class="award-icon">
+                        <PagesHomeAwardsAward />
+                      </div>
+                      <h3 class="award-title">Lorem ipsum dolor sit amet consectetur.</h3>
+                  </div>
+                </div>
+
+                <div class="single-awards">
+                  <div class="single-awards-content">
+                      <div class="award-icon">
+                        <PagesHomeAwardsAward />
+                      </div>
+                      <h3 class="award-title">Lorem ipsum dolor sit amet consectetur.</h3>
+                  </div>
+                </div>
+              </VueSlickCarousel>
+            </div>
+        </div>
+    </section>
+
+    <blog />
+
+    <case-studies />
+
+    <testimonials />
   </main>
 </template>
 
@@ -231,10 +305,16 @@
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import Blog from '../components/sections/Blog.vue'
+import CaseStudies from '../components/sections/CaseStudies.vue'
+import Testimonials from '../components/sections/Testimonials.vue'
 
 export default {
     components: { 
-        VueSlickCarousel 
+        VueSlickCarousel,
+        Blog,
+        CaseStudies,
+        Testimonials,
     },
     transition: 'slide-bottom',
     data() {
@@ -242,8 +322,8 @@ export default {
             settingsOne: {
                 arrows: true,
                 dots: false,
-                autoplay: false,
-                autoplaySpeed: 6000,
+                autoplay: true,
+                autoplaySpeed: 10000,
                 slidesToShow: 4,
                 slidesToScroll: 1,
                 infinite: true,
@@ -257,7 +337,9 @@ export default {
                     {
                         breakpoint: 991,
                         settings: {
-                            slidesToShow: 2,
+                            arrows: false,
+                            slidesToShow: 2.5,
+                            infinite: false,
                         }
                     },
                     {
@@ -273,20 +355,14 @@ export default {
             settingsTwo: {
                 arrows: true,
                 dots: false,
-                autoplay: false,
-                autoplaySpeed: 6000,
+                autoplay: true,
+                autoplaySpeed: 10000,
                 slidesToShow: 2,
                 slidesToScroll: 1,
                 infinite: true,
                 responsive: [
                     {
                         breakpoint: 991,
-                        settings: {
-                            slidesToShow: 1,
-                        }
-                    },
-                    {
-                        breakpoint: 767,
                         settings: {
                             arrows: false,
                             slidesToShow: 1.5,
@@ -295,6 +371,33 @@ export default {
                     },
                 ]
             },
+            settingsThree: {
+              arrows: true,
+              dots: false,
+              autoplay: false,
+              autoplaySpeed: 10000,
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              infinite: true,
+              responsive: [
+                  {
+                      breakpoint: 991,
+                      settings: {
+                          arrows: false,
+                          slidesToShow: 2.5,
+                          infinite: false,
+                      }
+                  },
+                  {
+                      breakpoint: 767,
+                      settings: {
+                          arrows: false,
+                          slidesToShow: 1.5,
+                          infinite: false,
+                      }
+                  },
+              ]
+            }
         }
     },
 }

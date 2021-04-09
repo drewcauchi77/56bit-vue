@@ -38,6 +38,32 @@
                         }
                         .introduction-body{
                             padding-bottom: 40px;
+                            a{
+                                .button-text{
+                                    display: inline;
+                                    position: relative;
+                                    overflow: hidden;
+                                    &:after{
+                                        content: "";
+                                        position: absolute;
+                                        right: 0;
+                                        width: 0;
+                                        bottom: 0;
+                                        background: $gradient;
+                                        height: 2px;
+                                        transition-property: width;
+                                        transition-duration: 0.3s;
+                                        transition-timing-function: ease-out;
+                                    }
+                                    &:hover{
+                                        &:after{
+                                            left: 0;
+                                            right: auto;
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
                             span{
                                 font-size: 30px;
                                 line-height: 50px;

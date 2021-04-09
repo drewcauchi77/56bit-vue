@@ -19,6 +19,8 @@
                     .single-case-study-image{
                         width: 96%;
                         padding-bottom: 15px;
+                        height: 320px;
+                        object-fit: cover;
                     }
                     .single-case-study-title{
                         width: 96%;
@@ -133,6 +135,7 @@
                         grid-row-gap: 30px;
                         width: 99% !important;
                         margin: 0 0.5%;
+                        min-height: 420px;
                         .single-case-study-image{
                             width: 100%;
                             grid-area: caseimage;

@@ -1,23 +1,23 @@
 <template>
-    <section class="case-studies-section">
-      <div class="case-studies-container">
+    <section class="blog-section">
+      <div class="blog-container">
         <div class="upper-container container">
-            <h2 class="case-studies-title">Case Studies</h2>
+            <h2 class="blog-title">Blog</h2>
 
             <div class="view-all-button button">
-                <NuxtLink to="/case-studies">
+                <NuxtLink to="/blog">
                     <span class="button-text">View All</span>
                 </NuxtLink>
             </div>
         </div>
 
-        <div class="case-studies-listings">
-            <VueSlickCarousel v-bind="settings" v-if="caseStudies.length">
-                <NuxtLink v-for="caseStudy in caseStudies" :key="caseStudy.slug" :to="{ name: 'case-studies-slug', params: {slug: caseStudy.slug} }" class="single-case-link">
-                    <img :src="api_url + caseStudy.ClientFeaturedImage.url" :alt="caseStudy.ClientFeaturedImage.alternativeText" class="single-case-study-image">
-                    <h3 class="single-case-study-title">{{ caseStudy.CaseStudyTitle }}</h3>
-                    <div class="single-case-study-excerpt">
-                        <p v-html="caseStudy.CaseStudyExcerpt"></p>
+        <div class="blog-listings">
+            <VueSlickCarousel v-bind="settings" v-if="blogs.length">
+                <NuxtLink v-for="blog in blogs" :key="blog.slug" :to="{ name: 'blog-slug', params: {slug: blog.slug} }" class="single-blog-link">
+                    <img :src="api_url + blog.BlogFeaturedImage.url" :alt="blog.BlogFeaturedImage.alternativeText" class="single-blog-image">
+                    <h3 class="single-blog-title">{{ blog.BlogPostTitle }}</h3>
+                    <div class="single-blog-excerpt">
+                        <p v-html="blog.BlogPostExcerpt"></p>
                     </div>
                     <div class="read-more-button">
                         <span class="read-more-text">Read more</span>
@@ -33,7 +33,7 @@
 <script>
 // Getting all the case studies from the query in caseStudies.js 
 // This will be a data array within the apollo query below
-import { caseStudiesQuery } from '~/queries/collection/case-studies/caseStudies'
+import { blogsLimitQuery } from '~/queries/collection/blog/blogsLimit'
 
 // Slick slider components and importation
 import VueSlickCarousel from 'vue-slick-carousel'
@@ -47,7 +47,7 @@ export default {
     data() {
         return {
             // Pre render caseStudies array to eliminate Slick Slider rendering with no children
-            caseStudies: [],
+            blogs: [],
             // The api url called from nuxt.config file to get the images from
             api_url: process.env.strapiBaseUri,
             settings: {
@@ -58,13 +58,17 @@ export default {
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 infinite: true,
-                fade: true,
                 speed: 1000,
+                fade: true,
                 responsive: [
+                    {
+                        breakpoint: 9999,
+                        settings: "unslick"
+                    },
                     {
                         breakpoint: 991,
                         settings: {
-                            arrows: true,
+                            arrows: false,
                             slidesToShow: 2.5,
                             infinite: false,
                             fade: false,
@@ -85,13 +89,13 @@ export default {
     },
     apollo: {
         // This is looped to get each value from the loop in the NuxtLink above by parameter slug for the url
-        caseStudies: {
+        blogs: {
             // Prefetch to eliminate issue that Slick Slider renders with no children
             prefetch: true,
             // The query that has been imported in array form caseStudies
-            query: caseStudiesQuery,
+            query: blogsLimitQuery,
             // Updating the data that is passed to rendered variable above
-            update: data => data.caseStudies
+            update: data => data.blogs
         }
     }
 }

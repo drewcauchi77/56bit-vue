@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 
 export const caseStudiesQuery = gql`
     query getCaseStudies{
-        caseStudies(sort: "published_at:asc"){
+        caseStudies(sort: "published_at:desc"){
             id
             slug
             CaseStudyTitle

@@ -10,9 +10,9 @@
                 .single-testimonial{
                     position: relative;
                     border: 1px solid $white;
-                    width: 96% !important;
-                    margin: 0 2%;
+                    width: 98.5% !important;
                     min-height: 220px;
+                    outline: none;
                     .single-testimonial-content{
                         width: 85%;
                         position: absolute;
@@ -76,19 +76,18 @@
                 .slick-slider{
                     position: relative;
                     .single-testimonial{
-                        width: 92% !important;
-                        margin: 0 4%;
+                        width: 99.5% !important;
                     }
                     .slick-arrow{
-                        top: 0;
+                        top: 15px;
                         bottom: 0;
                     }
                     .slick-prev{
-                        left: -15px;
+                        left: -35px;
                         right: unset;
                     }
                     .slick-next{
-                        right: -15px;
+                        right: -35px;
                         left: unset;
                     }
                 }
@@ -108,14 +107,14 @@
                 .slick-slider{
                     .single-testimonial{
                         min-height: 400px;
+                        width: 98% !important;
+                        margin-left: 0.5%;
                     }
                     .slick-arrow{
-                        height: 40px;
-                        width: 40px;
                         top: 40px;
                     }
                     .slick-prev{
-                        left: -30px;
+                        left: -38px;
                     }
                     .slick-next{
                         right: -30px;
@@ -140,34 +139,17 @@
                         }
                     }
                     .slick-arrow{
-                        height: 50px;
-                        width: 50px;
+                        height: 40px;
+                        width: 40px;
                         &:before{
                             font-size: 25px;
                         }
                     }
                     .slick-prev{
-                        left: -40px;
+                        left: -45px;
                     }
                     .slick-next{
                         right: -40px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: $breakpointXXLarge){
-    .testimonials-section{
-        .testimonials-container{
-            .testimonials-list{
-                .slick-slider{
-                    .slick-prev{
-                        left: -60px;
-                    }
-                    .slick-next{
-                        right: -60px;
                     }
                 }
             }

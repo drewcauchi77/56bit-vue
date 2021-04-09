@@ -1,0 +1,42 @@
+.home-main{
+    .expertise-section{
+        .expertise-container{
+            padding-top: 80px;
+            .expertise-details{
+                .expertise-title{
+                    padding-bottom: 30px;
+                }
+            }
+            .expertise-image{
+                padding-top: 30px;
+                a{
+                    img{
+                        margin: 0 auto;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .home-main{
+        .expertise-section{
+            .expertise-container{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-column-gap: 30px;
+                padding-top: 140px;
+                .expertise-details{
+                    align-self: center;
+                }
+                .expertise-image{
+                    align-self: center;
+                    justify-self: center;
+                    padding-top: 0px;
+                }
+            }
+        }
+    }
+}

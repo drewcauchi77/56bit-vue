@@ -1,22 +1,22 @@
 .home-main{
-    .technical-section{
-        .technical-container{
+    .awards-section{
+        .awards-container{
             padding-top: 80px;
             margin-top: -50px;
-            .technical-title{
+            .awards-title{
                 padding-bottom: 30px;
             }
-            .technical-list{
+            .awards-list{
                 padding-left: 5%;
                 padding-bottom: 80px;
                 .slick-slider{
-                    .single-technical{
-                        height: 300px;
-                        border: 1px solid $white;
+                    .single-awards{
+                        height: 220px;
+                        background: $gradient;
                         width: 96% !important;
                         transition: 0.5s all;
                         position: relative;
-                        .single-technical-content{
+                        .single-awards-content{
                             position: absolute;
                             top: 0;
                             bottom: 0;
@@ -25,30 +25,12 @@
                             margin: auto;
                             width: 80%;
                             height: fit-content;
-                            .technical-icon{
-                                padding-bottom: 15px;
-                                text-align: center;
+                            .award-icon{
+                                padding-bottom: 30px;
+                                text-align: left;
                             }
-                            .technical-title{
-                                padding-bottom: 15px;
-                                text-align: center;
-                            }
-                            .technical-text{
-                                padding-bottom: 0px;
-                                text-align: center;
-                            }
-                        }
-                        &:hover{
-                            background: $gradient;
-                            border: none;
-                            .single-technical-content{
-                                .technical-icon{
-                                    svg{
-                                        path{
-                                            stroke: $white;
-                                        }
-                                    }
-                                }
+                            .award-title{
+                                text-align: left;
                             }
                         }
                     }
@@ -60,28 +42,27 @@
 
 @media only screen and (min-width: $breakpointLarge){
     .home-main{
-        .technical-section{
-            .technical-container{
-                padding-bottom: 140px;
-                .technical-title{
+        .awards-section{
+            .awards-container{
+                padding-bottom: 75px;
+                .awards-title{
                     padding-bottom: 80px;
-                    text-align: center;
                 }
-                .technical-list{
+                .awards-list{
                     width: 90%;
                     margin: auto;
                     max-width: 1420px;
                     padding: 0px;
                     .slick-slider{
-                        .single-technical{
-                            height: 400px;
+                        .single-awards{
+                            height: 300px;
                             width: 98% !important;
                             margin-left: 0.5%;
-                            .single-technical-content{
-                                .technical-icon{
+                            .single-awards-content{
+                                .award-icon{
                                     padding-bottom: 30px;
                                 }
-                                .technical-title{
+                                .award-title{
                                     padding-bottom: 30px;
                                 }
                             }
@@ -126,9 +107,9 @@
 
 @media only screen and (min-width: $breakpointXLarge){
     .home-main{
-        .technical-section{
-            .technical-container{
-                .technical-list{
+        .awards-section{
+            .awards-container{
+                .awards-list{
                     .slick-slider{
                         .slick-arrow{
                             height: 40px;

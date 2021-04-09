@@ -34,6 +34,7 @@
 // Sectional Components Styling
 @import "sections/testimonials";
 @import "sections/case-studies";
+@import "sections/blog";
 
 // Home Page
 @import "home-page/introduction";
@@ -41,6 +42,10 @@
 @import "home-page/services";
 @import "home-page/tagline";
 @import "home-page/technical";
+@import "home-page/expertise";
+@import "home-page/awards";
+@import "home-page/case-studies";
+@import "home-page/testimonials";
 
 // About Us Main Page
 @import "about-us-page/introduction";
