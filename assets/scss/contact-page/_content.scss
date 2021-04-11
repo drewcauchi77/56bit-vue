@@ -1,0 +1,143 @@
+.contact-main{
+    .contact-section{
+        .contact-container{
+            .details-section{
+                .details-title{
+                    padding-bottom: 30px;
+                }
+                .details-body{
+                    padding-bottom: 30px;
+                }
+            }
+            .form-container{
+                padding-bottom: 50px;
+                .form-section{
+                    form{
+                        p{
+                            font-size: 20px;
+                            display: inline-block;
+                            line-height: 30px;
+                            padding-bottom: 30px;
+                            label{
+                                display: none;
+                            }
+                            input, select{
+                                display: inline-block;
+                                background: transparent;
+                                border: none;
+                                text-align: center;
+                                border-bottom: 1px solid $violet;
+                                font-style: italic;
+                                width: 230px;
+                                color: $white;
+                                outline: none;
+                                text-align-last: center;
+                                option{
+                                    color: $black;
+                                    text-align: center;
+                                }
+                                &::placeholder{
+                                    color: $white;
+                                }
+                            }
+                        }
+                        .hidden{
+                            display: none;
+                        }
+                        .submit-button{
+                            button{
+                                height: 100%;
+                                width: 100%;
+                                border-radius: 50px;
+                                border: none;
+                                background: transparent;
+                                text-transform: uppercase;
+                                cursor: pointer;
+                                color: $white;
+                                font-size: 12px;
+                                font-weight: 500;
+                                font-family: Roboto, sans-serif;
+                            }
+                        }
+                        .form-message{
+                            padding-top: 30px;
+                            .error-message{
+                                color: red;
+                                padding-bottom: 0;
+                            }
+                            .success-message{
+                                color: green;
+                                padding-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .contact-details-section{
+                display: grid;
+                grid-row-gap: 20px;
+                grid-template-rows: repeat(2, 35px);
+                .contact-sect{
+                    display: grid;
+                    grid-template-columns: 35px auto;
+                    grid-column-gap: 15px;
+                    height: 35px;
+                    .icon{
+                        height: 34px;
+                        width: 34px;
+                        background: $gradient;
+                        border-radius: 50%;
+                        position: relative;
+                        svg{
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            height: fit-content;
+                        }
+                    }
+                    span{
+                        align-self: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .contact-main{
+        .contact-section{
+            .contact-container{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-areas: 'details form'
+                    'contact form';
+                .details-section{
+                    grid-area: details;
+                    padding: 15% 15% 0px 0px;
+                }
+                .form-container{
+                    grid-area: form;
+                    padding: 15% 0px 15% 15%;
+                    border-left: 1px solid $white;
+                    .form-section{
+                        form{
+                            position: relative;
+                            .form-message{
+                                position: absolute;
+                                padding-top: 50px;
+                            }
+                        }
+                    }
+                }
+                .contact-details-section{
+                    grid-area: contact;
+                    padding-bottom: 15%;
+                }
+            }
+        }
+    }
+}
