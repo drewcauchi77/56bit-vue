@@ -16,7 +16,7 @@ p{
     padding-bottom: 20px;
 }
 
-ul, li{
+ul, li, ol{
     padding: 0px;
     margin: 0px;
 }
@@ -34,6 +34,19 @@ ul, li{
     }
 }
 
+.custom-span{
+    font-style: italic;
+    font-size: 18px;
+    padding-bottom: 30px;
+    display: block;
+}
+
+.custom-link{
+    color: $white;
+    font-size: 700;
+    text-decoration: underline;
+}
+
 @media only screen and (min-width: $breakpointLarge){
     p, span, strong{
         font-size: 18px;
@@ -42,6 +55,10 @@ ul, li{
 
     p{
         padding-bottom: 30px;
+    }
+
+    .custom-span{
+        font-size: 22px;
     }
 
     .custom-list{

@@ -1,0 +1,190 @@
+.privacy-cookies-main{
+    .contents-section{
+        .contents-container{
+            border-bottom: 1px solid $white;
+            .contents-inner-container{
+                .contents-tagline{
+                    font-size: 20px;
+                    padding-bottom: 20px;
+                    display: block;
+                    font-weight: 400;
+                }
+                .contents-title{
+                    padding-bottom: 40px;
+                }
+                .contents-sect-title{
+                    font-size: 20px;
+                    padding-bottom: 20px;
+                    display: block;
+                    font-weight: 500;
+                }
+                .contents-list{
+                    padding-bottom: 10px;
+                    li{
+                        margin-left: 30px;
+                        font-family: Roboto, sans-serif;
+                        color: #FFF;
+                        font-weight: 700;
+                        font-size: 18px;
+                        padding-left: 20px;
+                        line-height: 30px;
+                        &:last-child{
+                            p{
+                                padding-bottom: 0px;
+                            }
+                        }
+                    }
+                    ol{
+                        margin-left: 40px;
+                        list-style-type: lower-alpha;
+                        li{
+                            padding-left: 0px;
+                            font-weight: 400;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .details-section{
+        .details-container{
+            padding: 0px;
+            .single-privacy-content{
+                max-height: fit-content;
+                transition: 0.5s all;
+                border-bottom: 1px solid $white;
+                .single-privacy-upper{
+                    display: grid;
+                    grid-template-columns: auto 24px;
+                    grid-column-gap: 30px;
+                    padding: 30px 0px;
+                    cursor: pointer;
+                    .open-button{
+                        height: 24px;
+                        width: 24px;
+                        position: relative;
+                        border-radius: 50%;
+                        background: $gradient;
+                        align-self: center;
+                        span{
+                            position: absolute;
+                            transition: 0.5s;
+                            background: $white;
+                            border-radius: 2px;
+                            &:first-child{
+                                top: 25%;
+                                bottom: 25%;
+                                width: 2px;
+                                left: 46.5%;
+                            }
+                            &:last-child{
+                                left: 25%;
+                                right: 25%;
+                                height: 2px;
+                                top: 45%;
+                            }
+                        }
+                        &.minus{
+                            span{
+                                transform: rotate(90deg);
+                                &:last-child{
+                                    left: 50%;
+                                    right: 50%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .single-privacy-details{
+                    display: none;
+                    ul{
+                        padding-bottom: 20px;
+                    }
+                    .special-margin{
+                        margin-left: 20px;
+                    }
+                    table{
+                        display: block;
+                        overflow-x: auto;
+                        white-space: wrap;
+                        margin-bottom: 30px;
+                        tr{
+                            font-family: Roboto, sans-serif;
+                            font-style: normal;
+                            color: #FFF;
+                            font-weight: 400;
+                            height: 50px;
+                            td, th{
+                                font-size: 14px;
+                                min-width: 90px;
+                                text-align: left;
+                                padding: 10px 5px;
+                            }
+                        }
+                    }
+                    table, th, td{
+                        border: 1px solid $white;
+                        border-collapse: collapse;
+                    }
+                }
+                &.open{
+                    .single-privacy-details{
+                        display: block;
+                    }
+                }
+                &:last-child{
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointMedium){
+    .privacy-cookies-main{
+        .contents-section{
+            .contents-container{
+                .contents-inner-container{
+                    max-width: 960px;
+                    margin: 0 auto;
+                    .contents-tagline{
+                        font-size: 26px;
+                    }
+                    .contents-sect-title{
+                        font-size: 26px;
+                    }
+                    .contents-list{
+                        li{
+                            font-size: 20px;
+                        }
+                        ol{
+                            li{
+                                font-style: italic;
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .details-section{
+            padding-top: 45px;
+            .details-container{
+                max-width: 960px;
+                margin: 0 auto;
+                .single-privacy-content{
+                    border-bottom: none;
+                    .single-privacy-upper{
+                        .open-button{
+                            display: none;
+                        }
+                    }
+                    .single-privacy-details{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
