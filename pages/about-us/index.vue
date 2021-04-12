@@ -263,6 +263,20 @@ export default {
       isMobile: false
     }
   },
+  // The Nuxt provider to change the page title
+  head() {
+    return {
+      title: '56Bit - About Us',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: '56Bit delivers best-practice cloud expertise to organisations of any size'
+        }
+      ]
+    }
+  },
   methods: {
     // Method is called when the arrow to float to next section is pressed - only shown on mobile (.scroll-down class)
     scrollToElement() {

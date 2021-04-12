@@ -55,6 +55,20 @@
 
 <script>
 export default {
-  transition: 'slide-bottom'
+  transition: 'slide-bottom',
+  // The Nuxt provider to change the page title
+  head() {
+    return {
+      title: '56Bit - AWS',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: '56Bit delivers best-practice cloud expertise to organisations of any size'
+        }
+      ]
+    }
+  },
 }
 </script>

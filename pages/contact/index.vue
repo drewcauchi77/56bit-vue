@@ -96,6 +96,20 @@ export default {
       website: null,
     }
   },
+  // The Nuxt provider to change the page title
+  head() {
+    return {
+      title: '56Bit - Contact Us',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: '56Bit delivers best-practice cloud expertise to organisations of any size'
+        }
+      ]
+    }
+  },
   methods: {
     sendMessage() {
       this.loading = true

@@ -189,6 +189,20 @@ export default {
       isMobile: false,
     }
   },
+  // The Nuxt provider to change the page title
+  head() {
+    return {
+      title: '56Bit - Cookie Policy',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: '56Bit delivers best-practice cloud expertise to organisations of any size'
+        }
+      ]
+    }
+  },
   methods: {
     // Method that gains id of div on click through the event and if the condition of isMobile is successful, then execute
     selectContent(event) {

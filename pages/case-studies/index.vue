@@ -58,6 +58,20 @@ export default {
             api_url: process.env.strapiBaseUri,
         }
     },
+    // The Nuxt provider to change the page title
+    head() {
+      return {
+        title: '56Bit - Case Studies',
+        meta: [
+          // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+          {
+            hid: 'description',
+            name: 'description',
+            content: '56Bit delivers best-practice cloud expertise to organisations of any size'
+          }
+        ]
+      }
+    },
     apollo: {
         // This is looped to get each value from the loop in the NuxtLink above by parameter slug for the url
         caseStudies: {

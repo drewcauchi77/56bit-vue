@@ -1,0 +1,74 @@
+.careers-main{
+    .details-section{
+        .details-container{
+            .details{
+                .details-title{
+                    padding-bottom: 30px;
+                }
+            }
+            .details-image, .scroll-down{
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointLarge){
+    .careers-main{
+        .details-section{
+            .details-container{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-column-gap: 30px;
+                .details{
+                    align-self: center;
+                    .details-title{
+                        padding-bottom: 30px;
+                    }
+                }
+                .details-image{
+                    display: block;
+                    img{
+                        height: 100%;
+                        object-fit: cover;
+                        width: 100%;
+                    }
+                }
+                .scroll-down{
+                    grid-column: 1/3;
+                    display: grid;
+                    .scroll-text{
+                        font-size: 14px;
+                    }
+                    .rotator{
+                        width: 20px;
+                        height: 20px;
+                        &:hover{
+                            transform: rotate(135deg) scale(1.1);
+                        }
+                    }   
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointXLarge){
+    .careers-main{
+        .details-section{
+            .details-container{
+                grid-column-gap: 50px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointXXLarge){
+    .careers-main{
+        .details-section{
+            .details-container{
+                grid-column-gap: 140px;
+            }
+        }
+    }
+}
