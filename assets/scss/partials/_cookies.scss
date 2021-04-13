@@ -1,0 +1,161 @@
+.cookieControl{
+    .cookieControl__Bar{
+        background: $gradient;
+        .cookieControl__BarContainer{
+            h3{
+                padding-bottom: 20px;
+            }
+            p{
+                margin-top: 0px;
+            }
+            .cookieControl__BarButtons{
+                margin: 0 auto;
+                width: fit-content;
+                button{
+                    border-radius: 50px;
+                    font-family: Roboto, sans-serif;
+                    font-size: 12px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    border: 1px solid $white;
+                    transition: 0.5s all;
+                    &:first-child{
+                        color: $white;
+                        background: transparent;
+                        &:hover{
+                            background: $white;
+                            color: $purple;
+                        }
+                    }
+                    &:last-child{
+                        color: $purple;
+                        &:hover{
+                            color: $white;
+                            background: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .cookieControl__ControlButton{
+        display: none;
+    }
+    .cookieControl__Modal{
+        .cookieControl__ModalContent{
+            width: 70vw;
+            margin: 0 auto;
+            height: fit-content;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            padding: 20px;
+            background: $gradient;
+            overflow: hidden;
+            width: 200px;
+            border-radius: 10px;
+            div{
+                display: grid;
+                grid-row-gap: 20px;
+                .cookieControl__ModalClose{
+                    position: relative;
+                    top: 0;
+                    right: 0;
+                    border-radius: 50px;
+                    font-family: Roboto, sans-serif;
+                    font-size: 12px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    border: 1px solid $white;
+                    transition: 0.5s all;
+                    background: transparent;
+                    &:hover{
+                        background: $white;
+                        color: $purple;
+                    }
+                }
+                h3, ul{
+                    display: none;
+                }
+                .cookieControl__ModalButtons{
+                    margin-top: 0px;
+                    button{
+                        margin-left: 0px;
+                        border-radius: 50px;
+                        font-family: Roboto, sans-serif;
+                        font-size: 12px;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        border: 1px solid $white;
+                        transition: 0.5s all;
+                        background: $white;
+                        color: $purple;
+                        &:hover{
+                            background: transparent;
+                            color: $white;
+                        }
+                        &:first-child{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $breakpointMedium){
+    .cookieControl{
+        .cookieControl__Bar{
+            max-width: 1420px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            height: 200px;
+            .cookieControl__BarContainer{
+                height: 160px;
+                display: grid;
+                grid-template-columns: auto 340px;
+                grid-column-gap: 30px;
+                div{
+                    align-self: center;
+                    p{
+                        padding-bottom: 0px;
+                    }
+                }
+                .cookieControl__BarButtons{
+                    align-self: center;
+                    button{
+                        width: 160px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+        .cookieControl__Modal{
+            position: relative;
+            top: unset;
+            bottom: unset;
+            left: unset;
+            right: unset;
+            .cookieControl__ModalContent{
+                position: fixed;
+                bottom: 220px;
+                margin: auto;
+                height: fit-content;
+                right: 0;
+                left: 0;
+                top: unset;
+                width: fit-content;
+                max-width: unset;
+                border-radius: 5px;
+                div{
+                    grid-template-columns: repeat(3, 200px);
+                    grid-column-gap: 30px;
+                }
+            }
+        }
+    }
+}

@@ -3,5 +3,6 @@
     <PartialsHeader />
     <Nuxt />
     <PartialsFooter />
+    <CookieControl/>
   </div>
 </template>

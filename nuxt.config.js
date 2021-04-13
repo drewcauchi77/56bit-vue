@@ -41,6 +41,10 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/apollo',
     '@nuxtjs/axios',
+    ['nuxt-cookie-control', {
+      barPosition: "bottom-full",
+      controlButton: false,
+    }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
