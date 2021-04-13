@@ -22,6 +22,8 @@
 @import "classes/buttons";
 // The content sections mainly used for Blogs and Case Studies
 @import "classes/content";
+// The gradient backgrounded tagline sections throughout the site (homepage, careers page)
+@import "classes/tagline";
 
 // Including sections that make the site functional
 // The scollbar changes in CSS
@@ -40,7 +42,6 @@
 @import "home-page/introduction";
 @import "home-page/aws";
 @import "home-page/services";
-@import "home-page/tagline";
 @import "home-page/technical";
 @import "home-page/expertise";
 @import "home-page/awards";
@@ -73,6 +74,8 @@
 
 // Careers Page
 @import "careers-page/details";
+@import "careers-page/listings";
+@import "careers-page/application";
 
 // AWS Main Page
 @import "aws-page/introduction";

@@ -1,0 +1,139 @@
+.careers-main{
+    .application-section{
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 100vh;
+        width: 100vw;
+        background: $black;
+        z-index: 999;
+        .application-container{
+            height: 100%;
+            padding-bottom: 0px;
+            position: relative;
+            .form-container{
+                .form-container-upper{
+                    display: grid;
+                    grid-template-columns: auto 40px;
+                    grid-column-gap: 30px;
+                    padding-bottom: 30px;
+                    .close{
+                        height: 40px;
+                        width: 40px;
+                        position: relative;
+                        cursor: pointer;
+                        &:after{
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            content: "\d7";
+                            font-size: 55px; 
+                            color: $white;
+                            text-align: center;
+                            height: fit-content;
+                            margin: auto;
+                        }
+                    }
+                }
+                .form-section{
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    height: fit-content;
+                    max-height: calc(100vh - 200px);
+                    overflow-y: scroll;
+                    form{
+                        padding: 50px 0px;
+                        input, select{
+                            display: block;
+                            background: transparent;
+                            border: none;
+                            text-align: left;
+                            border-bottom: 1px solid $white;
+                            margin: 0 auto;
+                            color: $white;
+                            outline: none;
+                            text-align-last: left;
+                            font-family: Roboto, sans-serif;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 14px;
+                            margin: 0px;
+                            line-height: 20px;
+                            height: 35px;
+                            margin-bottom: 20px;
+                            option{
+                                color: $black;
+                                text-align: left;
+                            }
+                            &::placeholder{
+                                color: $white;
+                            }
+                        }
+                        input{
+                            width: 99%;
+                        }
+                        select{
+                            width: 100%;
+                        }
+                        label, .hidden{
+                            display: none;
+                        }
+                        input[type=file]{
+                            border-bottom: none;
+                        }
+                        .submit-button{
+                            button{
+                                height: 100%;
+                                width: 100%;
+                                border-radius: 50px;
+                                border: none;
+                                background: transparent;
+                                text-transform: uppercase;
+                                cursor: pointer;
+                                color: $white;
+                                font-size: 12px;
+                                font-weight: 500;
+                                font-family: Roboto, sans-serif;
+                                outline: none;
+                            }
+                        }
+                    }
+                    &::-webkit-scrollbar-track, &::-webkit-scrollbar, &::-webkit-scrollbar-thumb{
+                        display: none;
+                    }
+                }
+            }
+            .form-result{
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: $black;
+                .form-message{
+                    padding: 5px 5%;
+                    .error-message{
+                        color: red;
+                        padding-bottom: 0;
+                    }
+                    .success-message{
+                        color: green;
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+        &.open{
+            display: block;
+        }
+    }
+}

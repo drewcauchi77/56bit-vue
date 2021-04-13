@@ -5,6 +5,23 @@
                 .details-title{
                     padding-bottom: 30px;
                 }
+                .details-button{
+                    position: relative;
+                    cursor: pointer;
+                    .button-text{
+                        font-size: 12px;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        height: fit-content;
+                        width: fit-content;
+                    }
+                }
             }
             .details-image, .scroll-down{
                 display: none;
@@ -24,6 +41,11 @@
                     align-self: center;
                     .details-title{
                         padding-bottom: 30px;
+                    }
+                    .details-button{
+                        .button-text{
+                            font-size: 14px;
+                        }
                     }
                 }
                 .details-image{

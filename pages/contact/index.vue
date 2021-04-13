@@ -53,7 +53,7 @@
               </div>
               
               <div v-if="error" class="form-message">
-                <p class="error-message">Bummer, something went wrong. Did you fill out all of the fields?</p>
+                <p class="error-message">Bummer, something went wrong. Did you fill out all of the required fields?</p>
               </div>
             </form>
           </div>
