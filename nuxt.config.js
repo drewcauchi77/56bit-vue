@@ -65,7 +65,7 @@ export default {
   },
 
   googleAnalytics: {
-    id: 'G-FLBJE2GBHS'
+    id: 'UA-194589658-1'
   },
 
   ssr: false,

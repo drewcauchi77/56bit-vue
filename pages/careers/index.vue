@@ -95,35 +95,34 @@
               <label for="phone">Phone</label>
               <input type="tel" name="phone" placeholder="Phone">
 
-              <input type="file" name="resume" accept=".doc,.docx,.txt,application/pdf">
+              <div class="file-uploads">
+                <input type="file" name="resume" accept=".doc,.docx,.txt,application/pdf">
 
-              <input type="file" name="certification" accept=".doc,.docx,.txt,application/pdf">
+                <input type="file" name="certification" accept=".doc,.docx,.txt,application/pdf">
 
-              <input type="file" name="letter" accept=".doc,.docx,.txt,application/pdf">
+                <input type="file" name="letter" accept=".doc,.docx,.txt,application/pdf">
+              </div>
 
               <div class="submit-button button">
                 <button type="submit">
                   {{ loading ? "Sending Message..." : "Submit" }}
                 </button>
               </div>
+
+              <div v-if="success" class="form-message">
+                <p class="success-message">Thank you, your application has been received successfully!</p>
+              </div>
+              
+              <div v-if="error" class="form-message">
+                <p class="error-message">Bummer, something went wrong. Did you fill out all of the required fields?</p>
+              </div>
+
+              <div v-if="incorrectFiles" class="form-message">
+                <p class="error-message">Accepted file formats are PDF, DOC, DOCX and TXT.</p>
+              </div>
             </form>
           </div>
-
-          <div class="form-result">
-            <div v-if="success" class="form-message">
-              <p class="success-message">Thank you, your application has been received successfully!</p>
-            </div>
-            
-            <div v-if="error" class="form-message">
-              <p class="error-message">Bummer, something went wrong. Did you fill out all of the required fields?</p>
-            </div>
-
-            <div v-if="incorrectFiles" class="form-message">
-              <p class="error-message">Accepted file formats are PDF, DOC, DOCX and TXT.</p>
-            </div>
-          </div>
         </div>
-
       </div>
     </section>
 
@@ -142,6 +141,7 @@ export default {
   transition: 'slide-bottom',
   data() {
     return {
+      api_url: process.env.strapiBaseUri,
       // To keep the careers list after rendering
       careers: [],
       // setContent is an array so that it can handle multiple numbers for multiple sections open
@@ -255,7 +255,7 @@ export default {
         formData.append("data", JSON.stringify(data));
         
         if(this.incorrectFiles != true) {
-          this.$axios.post("http://localhost:1337/applications", formData)
+          this.$axios.post(this.api_url +"/applications", formData)
             .then(res => {
               this.success = true
               this.error = false
