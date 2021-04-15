@@ -375,7 +375,7 @@
       </div>
     </section>
 
-    <section class="awards-section">
+    <!-- <section class="awards-section">
         <div class="awards-container">
             <h2 class="container awards-title">Awards</h2>
 
@@ -419,9 +419,9 @@
               </VueSlickCarousel>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <blog />
+    <!-- <blog /> -->
 
     <case-studies />
 
