@@ -448,6 +448,7 @@ export default {
     transition: 'slide-bottom',
     data() {
         return {
+            // Slick slider carousels for the carousels on page
             settingsOne: {
                 arrows: true,
                 dots: false,
@@ -527,32 +528,46 @@ export default {
                   },
               ]
             },
+            // Set the methodology cycle starting point to always be 1 - DISCOVER
             setCycle: 1,
+            // Toggle the sliding page for the cycle used on mobile (< 992px)
             openCycleWindow: false,
+            // Variable to set whether the width is mobile or not
             isMobile: false
         }
     },
     methods: {
+      // On click of each dot, execute this method
       selectCycle(event) {
+        // This is set on the click of the dots, get the id of the dot (which would be the numbers)
         this.setCycle = event.currentTarget.id
+        // Check if the device is a mobile or not
         if(this.isMobile == true){
+          // If abided, open window
           this.openCycleWindow = true
+          // Stop the scrolling of the page
           document.documentElement.style.overflowY = 'hidden'
         }
       },
+      // On click of the close button within the cycle window
       closeCycleWindow() {
+        // Check if device is mobile and execute
         if(this.isMobile == true){
+          // Close window and reset the scrolling on body to work again
           this.openCycleWindow = false
           document.documentElement.style.overflowY = 'auto'
         }
       },
+      // To cycle within the navigation buttons - previous and next buttons in an infinite way
       cycleNavigator(event){
+        // Get the id of the target and if it is previous, decrease setCycle variable amount or else if it is 1, reset from 5
         if(event.currentTarget.id == 'prev'){
           if(this.setCycle == 1){
             this.setCycle = 5
           }else{
             this.setCycle--
           }
+        // Get the id of the target and if it is next, increase setCycle variable amount or else if it is 5, reset from 1
         }else if(event.currentTarget.id == 'next'){
           if(this.setCycle == 5){
             this.setCycle = 1
@@ -561,8 +576,9 @@ export default {
           }
         }
       },
-      // Method called when window resize is triggered from mounted
+      // Method called when window resize is triggered from mounted or created
       getWindowWidth() {
+        // Set variable according to the width
         if(window.innerWidth < 992){
           this.isMobile = true
           return
@@ -576,6 +592,7 @@ export default {
       window.addEventListener('resize', this.getWindowWidth)
       window.addEventListener('load', this.getWindowWidth)
     },
+    // When the page is rendered, execute the method to not allow for errors on load
     created() {
       this.getWindowWidth()
     }

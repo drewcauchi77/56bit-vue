@@ -11,7 +11,13 @@
             <p>Do you think you have what it takes to be part of the 56Bit dream? Reach out to us, let’s have a chat.</p>
           </div>
 
-          <div class="details-button button" @click="showApplicationForm = !showApplicationForm">
+          <div v-if="!careers.length" class="details-button button">
+            <NuxtLink to="/contact">
+              <span class="button-text">Reach Out</span>
+            </NuxtLink>
+          </div>
+
+          <div v-else class="details-button button" @click="showApplicationForm = !showApplicationForm">
             <span class="button-text">Reach Out</span>
           </div>
         </div>
@@ -55,7 +61,7 @@
       </div>
     </section>
 
-    <section class="application-section"  :class="{ open: showApplicationForm }">
+    <section class="application-section" :class="{ open: showApplicationForm }">
       <div class="container application-container">
 
         <div class="form-container">
@@ -64,7 +70,7 @@
               <h2 class="application-title">Application Form</h2>
             </div>
               
-            <div class="close"  @click="showApplicationForm = !showApplicationForm">
+            <div class="close" @click="showApplicationForm = !showApplicationForm">
               <span></span>
               <span></span>
             </div>
@@ -96,11 +102,32 @@
               <input type="tel" name="phone" placeholder="Phone">
 
               <div class="file-uploads">
-                <input type="file" name="resume" accept=".doc,.docx,.txt,application/pdf">
+                <div class="upload-section">
+                  <label class="file-input-label">
+                    <input type="file" name="resume" accept=".doc,.docx,.txt,application/pdf" @change="onResumeFileChange">
+                    <span>+</span>
+                  </label>
 
-                <input type="file" name="certification" accept=".doc,.docx,.txt,application/pdf">
+                  <span class="upload-title">{{ resumeFileName }}</span>
+                </div>
 
-                <input type="file" name="letter" accept=".doc,.docx,.txt,application/pdf">
+                <div class="upload-section">
+                  <label class="file-input-label">
+                    <input type="file" name="certification" accept=".doc,.docx,.txt,application/pdf" @change="onCertificationsFileChange">
+                    <span>+</span>
+                  </label>
+
+                  <span class="upload-title">{{ certificationsFileName }}</span>
+                </div>
+
+                <div class="upload-section">
+                  <label class="file-input-label">
+                    <input type="file" name="letter" accept=".doc,.docx,.txt,application/pdf" @change="coverLetterFileName">
+                    <span>+</span>
+                  </label>
+
+                  <span class="upload-title">{{ coverLetterFileName }}</span>
+                </div>
               </div>
 
               <div class="submit-button button">
@@ -146,14 +173,28 @@ export default {
       careers: [],
       // setContent is an array so that it can handle multiple numbers for multiple sections open
       setContent: [],
+      // When the process of sending is being done this variable changes to true
       loading: false,
+      // To show message on sucess
       success: false,
+      // To show message on error
       error: false,
+      // To check whether the files uploaded match the requirements PDF, DOC, DOCX, TXT
       incorrectFiles: false,
+      // To set whether the form filler is a bot or not
       isBot: false,
+      // The desired position selected
       position: '',
+      // The input field that should not be filled in
       website: null,
+      // Toggler for the application form to slide
       showApplicationForm: false,
+      // Setting the resume file name
+      resumeFileName: 'Upload CV',
+      // Setting the certification file name
+      certificationsFileName: 'Upload Certifications',
+      // Setting the cover letter file name
+      coverLetterFileName: 'Upload Cover Letter',
     }
   },
   apollo: {
@@ -206,36 +247,66 @@ export default {
         this.setContent.push(event.currentTarget.id)
       }
     },
+    // Get file name for upload on resume file upload
+    onResumeFileChange(event) {
+      this.resumeFileName = event.target.files[0].name.slice(0, 12) + '... uploaded'
+    },
+    // Get file name for upload on certifications file upload
+    onCertificationsFileChange(event) {
+      this.certificationsFileName = event.target.files[0].name.slice(0, 12) + '... uploaded'
+    },
+    // Get file name for upload on cover letter file upload
+    onCoverLetterFileChange(event) {
+      this.coverLetterFileName = event.target.files[0].name.slice(0, 12) + '... uploaded'
+    },
+    // Execute this when the submit button is pressed
     sendApplication() {
+      // Set loading to true since here is the process of form submission
       this.loading = true
+      // Reset all variables at the start of submission to eliminate non resetting for submission inserting when error is caused
       this.incorrectFiles = false
       this.success = false
       this.error = false
 
+      // If website input field is filled in and has text, the application submitter is a bot and therefore the contact form is hidden
+      // The bot receives a success message as if the message was sent, however it is not recorded in the backend
       if(this.website != null){
         this.isBot = true;
       }else{
+        // Get the input fields from the reference set in the input fields
         let form = this.$refs["uploadForm"];
         let formData = new FormData();
+        // Get all the input elements from the form
         let formElements = form.elements;
         let data = {};
 
+        // Go through each element of the form
         formElements.forEach(currentElement => {
+          // If the submit button is pressed, check whether there is a file upload in the elements
           if (!["submit", "file"].includes(currentElement.type)) {
+            // Get the value
             data[currentElement.name] = currentElement.value;
+            // If there is a file upload existing
           } else if (currentElement.type === "file") {
+            // If there is only one file
             if (currentElement.files.length === 1) {
+              // Get the file name that was uploaded
               const file = currentElement.files[0];
+              // Get the file extension to check whether it satisfies the requirements
               const fileExtension = file.name.split('.').pop();
               if(fileExtension === 'pdf' || fileExtension === 'doc' || fileExtension === 'docx' || fileExtension === 'txt'){
+                // If it satisfies the requirement we add the file to the API post call below
                 formData.append(`files.${currentElement.name}`, file, file.name);
+                // If it has already been tagged as there being an incorrect file reset
                 if(this.incorrectFiles != true){
                   this.incorrectFiles = false
                 }
               }else{
+                // Else mark as incorrect and show message
                 this.incorrectFiles = true;
               }
             } else {
+              // Same as the above but for a loop instead for a singular file
               for (let i = 0; i < currentElement.files.length; i++) {
                 const file = currentElement.files[i];
                 const fileExtension = file.name.split('.').pop();
@@ -252,8 +323,11 @@ export default {
           }
         });
 
+        // Add each value of input to the data
         formData.append("data", JSON.stringify(data));
         
+        // If the incorrect files are not tagged and all files are appropriate to the conditions
+        // Execute the POST axios request to the Strapi backend
         if(this.incorrectFiles != true) {
           this.$axios.post(this.api_url +"/applications", formData)
             .then(res => {

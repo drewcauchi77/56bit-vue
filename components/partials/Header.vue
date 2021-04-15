@@ -121,6 +121,14 @@
   </header>
 </template>
 
+<style>
+  @media only screen and (min-width: 992px){
+    .header-section .header-container .main-menu .header-menu .navigation-list{
+      grid-template-columns: repeat(7, auto);
+    }
+  }
+</style>
+
 <script>
   export default {
     data() {

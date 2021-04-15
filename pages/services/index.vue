@@ -316,5 +316,28 @@ export default {
       ]
     }
   },
+  methods: {
+    // This method is called every time the page services is rendered
+    scrollToSection() {
+
+      // Get the previous router path, which means check whether the services page was rendered and clicked from the site
+      // Eg: If one goes to Services page from Homepage, this method will not be executed
+      // If one goes to Services page by clicking 'Open Link in a New Tab' of Chrome - this function will be executed because rendered page
+      // will not have a path history from the router
+      if(this.$nuxt.context.from.fullPath.includes('services')){
+        // Removal of the hash in the path
+        let hash = this.$route.hash.substring(1)
+        // Timeout and after 1s execute the scroll - needed since the content would be rendered after the created function
+        setTimeout(function() {
+          document.getElementById(hash).scrollIntoView({ behavior: 'smooth'});
+        }, 1000);
+      }
+
+    },
+  },
+  // Calling above method when page render
+  created() {
+    this.scrollToSection()
+  }
 }
 </script>

@@ -251,14 +251,11 @@ export default {
   transition: 'slide-bottom',
   data() {
     return {
-      // #VAR5
       // A variable that is toggled by when the Read More button in the introduction section is pressed
       // Behaviours attached to this toggling is increase height of div, display block of text, rotation of arrow and change of read more text
       increaseHeight: false,
-      // #VAR6
       // A variable that is set to which founder you press, which is then transferred as a condition to the class add 
       setFounder: null,
-      // #VAR7
       // To detect whether the device has a burger menu or a full header menu since media query is set at 992px
       isMobile: false
     }
@@ -299,19 +296,19 @@ export default {
     },
     // Method that cancels the setFounder variable to start from the beginning
     resetFounder(event) {
-      // Setting #VAR7 as null
+      // Setting setFounder as null to reset
       this.setFounder = null
       // Allow scroll again
       document.documentElement.style.overflowY = 'auto'
     },
     // Method called when window resize is triggered from mounted
     getWindowWidth() {
-      // If true that the width of the window is less than 992, set #VAR3 to true and return
+      // If true that the width of the window is less than 992, set isMobile to true and return
       if(window.innerWidth < 992){
         this.isMobile = true
         return
       }
-      // Else set #VAR3 to false
+      // Else set isMobile to false
       this.isMobile = false
     }
   },
@@ -321,6 +318,7 @@ export default {
     window.addEventListener('load', this.getWindowWidth)
   },
   created() {
+    // When the page is rendered, execute this method
     this.getWindowWidth()
   }
 }

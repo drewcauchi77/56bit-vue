@@ -517,6 +517,7 @@ export default {
     return {
       // setContent is an array so that it can handle multiple numbers for multiple sections open
       setContent: [],
+      // Variable changed according to the width of the screen
       isMobile: false,
     }
   },
@@ -568,6 +569,7 @@ export default {
     window.addEventListener('resize', this.getWindowWidth)
     window.addEventListener('load', this.getWindowWidth)
   },
+  // When the page is rendered, execute the method to not allow for errors on load
   created() {
     this.getWindowWidth()
   }

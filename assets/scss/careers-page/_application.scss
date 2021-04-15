@@ -88,6 +88,56 @@
                         label, .hidden{
                             display: none;
                         }
+                        .file-uploads{
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            grid-column-gap: 30px;
+                            grid-row-gap: 30px;
+                            padding-bottom: 30px;
+                            .upload-section{
+                                display: grid;
+                                grid-template-rows: 120px auto;
+                                grid-row-gap: 10px;
+                                .file-input-label{
+                                    display: grid;
+                                    grid-template-rows: 120px auto;
+                                    grid-row-gap: 10px;
+                                    border: 1px solid $white;
+                                    position: relative;
+                                    cursor: pointer;
+                                    input[type=file]{
+                                        display: none;
+                                    }
+                                    span{
+                                        position: absolute;
+                                        top: 0;
+                                        bottom: 0;
+                                        left: 0;
+                                        right: 0;
+                                        margin: auto;
+                                        height: 30px;
+                                        width: 30px;
+                                        text-align: center;
+                                        font-size: 24px;
+                                        border: 1px solid $white;
+                                        border-radius: 50%;
+                                        line-height: 30px;
+                                    }
+                                    &:hover{
+                                        span{
+                                            background: $gradient;
+                                        }
+                                    }
+                                }
+                                .upload-title{
+                                    display: block;
+                                    align-self: center;
+                                    justify-self: center;
+                                    text-align: center;
+                                    word-break: break-all;
+                                }
+                            }
+                        }
                         .submit-button{
                             button{
                                 height: 100%;
@@ -124,6 +174,26 @@
     }
 }
 
+@media only screen and (min-width: 462px){
+    .careers-main{
+        .application-section{
+            .application-container{
+                .form-container{
+                    .form-section{
+                        form{
+                            .file-uploads{
+                                grid-template-columns: repeat(3, 1fr);
+                                grid-column: 1/3;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+                
+
 @media only screen and (min-width: $breakpointSmall){
     .careers-main{
         .application-section{
@@ -134,15 +204,18 @@
                             display: grid;
                             grid-template-columns: repeat(2, 1fr);
                             grid-column-gap: 30px;
-                            select, .file-uploads, .submit-button, .form-message{
+                            select, .submit-button, .form-message{
                                 grid-column: 1/3;
                             }
                             select, input{
                                 margin-bottom: 30px;
                             }
                             .file-uploads{
-                                display: grid;
-                                grid-template-columns: 1fr 1fr 1fr;
+                                grid-template-columns: repeat(3, 150px);
+                                grid-column: 1/3;
+                                .upload-section{
+                                    max-width: 150px;
+                                }
                             }
                         }
                     }
@@ -158,7 +231,7 @@
             background: rgba(256, 256, 256, 0.4);
             .application-container{
                 background: $white;
-                max-height: 650px;
+                max-height: 800px;
                 max-width: 960px;
                 position: absolute;
                 top: 0;
@@ -203,6 +276,24 @@
                                 }
                                 &::placeholder{
                                     color: $black;
+                                }
+                            }
+                            .file-uploads{
+                                padding-bottom: 10px;
+                                grid-template-columns: repeat(3, 200px);
+                                grid-column: 1/3;
+                                .upload-section{
+                                    max-width: 200px;
+                                    .file-input-label{
+                                        border-color: $black;
+                                        span{
+                                            border-color: $black;
+                                            color: $black;
+                                        }
+                                    }
+                                    .upload-title{
+                                        color: $black;
+                                    }
                                 }
                             }
                             .submit-button{
