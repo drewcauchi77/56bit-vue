@@ -122,7 +122,7 @@
 
                 <div class="upload-section">
                   <label class="file-input-label">
-                    <input type="file" name="letter" accept=".doc,.docx,.txt,application/pdf" @change="coverLetterFileName">
+                    <input type="file" name="letter" accept=".doc,.docx,.txt,application/pdf" @change="onCoverLetterFileChange">
                     <span>+</span>
                   </label>
 
