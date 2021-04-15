@@ -114,7 +114,7 @@
               </div>
               
               <div v-if="error" class="form-message">
-                <p class="error-message">Bummer, something went wrong. Did you fill out all of the required fields?</p>
+                <p class="error-message">Something went wrong. Did you fill out all of the required fields?</p>
               </div>
 
               <div v-if="incorrectFiles" class="form-message">

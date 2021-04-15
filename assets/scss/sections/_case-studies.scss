@@ -83,8 +83,7 @@
                         right: unset;
                         margin: auto;
                         height: fit-content;
-                        background: linear-gradient(to left, $violet 50%, $purple 50%) right;
-                        background-size: 200%;
+                        background: $gradient;
                         transition: 0.35s ease-out;
                         height: 50px;
                         width: 50px;
@@ -94,7 +93,7 @@
                             font-size: 25px;
                         }
                         &:hover{
-                            background-position: left;
+                            background: $hoverGradient;
                         }
                     }
                     .slick-prev{
@@ -161,8 +160,7 @@
                             grid-area: casebutton;
                             height: 50px;
                             width: 220px;
-                            background: linear-gradient(to left, $violet 50%, $purple 50%) right;
-                            background-size: 200%;
+                            background: $gradient;
                             border-radius: 50px;
                             transition: 0.35s ease-out;
                             position: relative;
@@ -181,7 +179,7 @@
                                 width: fit-content;
                             }
                             &:hover{
-                                background-position: left;
+                                background: $hoverGradient;
                             }
                             .rotator{
                                 display: none;

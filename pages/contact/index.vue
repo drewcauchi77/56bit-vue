@@ -21,9 +21,14 @@
                 <label for="query">query</label>
                 <select v-model="query" required name="query" id="query">
                   <option disabled value="">query</option>
-                  <option>Query A</option>
-                  <option>Query B</option>
-                  <option>Query C</option>
+                  <option>setting up my workloads in the cloud</option>
+                  <option>migrating to the cloud</option>
+                  <option>optimizing my current cloud setup</option>
+                  <option>cloud infrastructure support</option>
+                  <option>augmenting my team</option>
+                  <option>reviewing my security posture</option>
+                  <option>reviewing my architecture</option>
+                  <option>other requests</option>
                 </select>
 
                 . <br><br>Please do reach out to me on
@@ -53,7 +58,7 @@
               </div>
               
               <div v-if="error" class="form-message">
-                <p class="error-message">Bummer, something went wrong. Did you fill out all of the required fields?</p>
+                <p class="error-message">Something went wrong. Did you fill out all of the required fields?</p>
               </div>
             </form>
           </div>

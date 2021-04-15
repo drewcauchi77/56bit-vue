@@ -1,8 +1,12 @@
 $purple: #4F42E9;
 $violet: #9C94F2;
+$indigo: #7067D0;
+$darkIndigo: #291CC0;
 $black: #17181D;
 $white: #FFF;
+
 $gradient: linear-gradient(43.63deg, $purple 2.28%, $violet 100%);
+$hoverGradient: linear-gradient(43.63deg, $darkIndigo 2.28%, $indigo 100%);
 
 $breakpointSmall: 576px;
 $breakpointMedium: 768px;

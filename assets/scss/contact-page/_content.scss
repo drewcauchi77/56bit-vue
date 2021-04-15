@@ -62,12 +62,8 @@
                         }
                         .form-message{
                             padding-top: 30px;
-                            .error-message{
-                                color: red;
-                                padding-bottom: 0;
-                            }
-                            .success-message{
-                                color: green;
+                            .error-message, .success-message{
+                                color: $violet;
                                 padding-bottom: 0;
                             }
                         }
@@ -127,6 +123,11 @@
                     .form-section{
                         form{
                             position: relative;
+                            .submit-button{
+                                button{
+                                    font-size: 14px;
+                                }
+                            }
                             .form-message{
                                 position: absolute;
                                 padding-top: 50px;

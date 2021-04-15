@@ -319,6 +319,9 @@ export default {
     // On window resize and load, execute method getWindowWidth
     window.addEventListener('resize', this.getWindowWidth)
     window.addEventListener('load', this.getWindowWidth)
+  },
+  created() {
+    this.getWindowWidth()
   }
 }
 </script>

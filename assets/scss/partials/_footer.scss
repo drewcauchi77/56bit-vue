@@ -32,8 +32,7 @@
                 .social-item{
                     height: 34px;
                     border-radius: 50%;
-                    background: linear-gradient(to left, $violet 50%, $purple 50%) right;
-                    background-size: 200%;
+                    background: $gradient;
                     transition: 0.35s ease-out;
                     a{
                         height: 100%;
@@ -51,7 +50,7 @@
                         }
                     }
                     &:hover{
-                        background-position: left;
+                        background: $hoverGradient;
                     }
                 }
             }

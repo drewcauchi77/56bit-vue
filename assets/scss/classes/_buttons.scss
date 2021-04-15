@@ -1,8 +1,7 @@
 .button{
     height: 40px;
     width: 180px;
-    background: linear-gradient(to left, $violet 50%, $purple 50%) right;
-    background-size: 200%;
+    background: $gradient;
     border-radius: 50px;
     transition: 0.35s ease-out;
     margin-top: 15px;
@@ -26,7 +25,7 @@
         }
     }
     &:hover{
-        background-position: left;
+        background: $hoverGradient;
     }
 }
 

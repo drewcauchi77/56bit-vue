@@ -45,8 +45,7 @@
                                 width: 40px;
                                 top: 8px;
                                 right: 8px;
-                                background: linear-gradient(to left, $violet 50%, $purple 50%) right;
-                                background-size: 200%;
+                                background: $gradient;
                                 transition: 0.35s ease-out;
                                 .plus-text{
                                     margin: 0 auto;
@@ -58,7 +57,7 @@
                             }
                             &:hover{
                                 .plus-symbol{
-                                    background-position: left;
+                                    background: $hoverGradient;
                                 }
                             }
                         }

@@ -106,12 +106,8 @@
                         }
                         .form-message{
                             padding-top: 10px;
-                            .error-message{
-                                color: red;
-                                padding-bottom: 0;
-                            }
-                            .success-message{
-                                color: green;
+                            .error-message, .success-message{
+                                color: $violet;
                                 padding-bottom: 0;
                             }
                         }
@@ -200,12 +196,23 @@
                                 border-bottom: 1px solid $black;
                                 color: $black;
                                 margin-bottom: 40px;
+                                font-size: 18px;
                                 option{
                                     color: $black;
                                     text-align: left;
                                 }
                                 &::placeholder{
                                     color: $black;
+                                }
+                            }
+                            .submit-button{
+                                button{
+                                    font-size: 14px;
+                                }
+                            }
+                            .form-message{
+                                .error-message, .success-message{
+                                    color: $purple;
                                 }
                             }
                         }

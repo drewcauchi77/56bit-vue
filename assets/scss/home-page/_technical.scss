@@ -1,10 +1,10 @@
 .home-main{
     .technical-section{
         .technical-container{
-            padding-top: 80px;
-            margin-top: -50px;
+            padding-top: 40px;
             .technical-title{
                 padding-bottom: 30px;
+                padding-top: 0px;
             }
             .technical-list{
                 padding-left: 5%;
@@ -80,8 +80,7 @@
                             margin: auto;
                             height: fit-content;
                             border-radius: 50%;
-                            background: linear-gradient(to left, $violet 50%, $purple 50%) right;
-                            background-size: 200%;
+                            background: $gradient;
                             transition: 0.35s ease-out;
                             height: 30px;
                             width: 30px;
@@ -90,7 +89,7 @@
                                 line-height: 11px;
                             }
                             &:hover{
-                                background-position: left;
+                                background: $hoverGradient;
                             }
                         }
                         .slick-prev{

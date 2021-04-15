@@ -36,8 +36,7 @@
                     margin: auto;
                     height: fit-content;
                     border-radius: 50%;
-                    background: linear-gradient(to left, $violet 50%, $purple 50%) right;
-                    background-size: 200%;
+                    background: $gradient;
                     transition: 0.35s ease-out;
                     height: 30px;
                     width: 30px;
@@ -46,7 +45,7 @@
                         line-height: 11px;
                     }
                     &:hover{
-                        background-position: left;
+                        background: $hoverGradient;
                     }
                 }
                 .slick-prev{

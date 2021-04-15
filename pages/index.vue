@@ -145,6 +145,135 @@
     <section class="methodology-section">
       <div class="container methodology-container">
         <h2 class="methodology-title">The 56Bit Methodology Cycle</h2>
+
+        <div class="methodology-life-cycle">
+            <div class="single-item">
+              <div class="circle-item" id="1" @click="selectCycle">
+                <div class="dot-item" :class="{ bigger: (setCycle == 1) }"></div>
+              </div>
+
+              <div class="circle-text">
+                <span>DISCOVER</span>
+              </div>
+            </div>
+
+            <div class="single-item">
+              <div class="circle-item" id="2" @click="selectCycle">
+                <div class="dot-item" :class="{ bigger: (setCycle == 2) }"></div>
+              </div>
+
+              <div class="circle-text">
+                <span>BUILD</span>
+              </div>
+            </div>
+
+            <div class="single-item">
+              <div class="circle-item" id="3" @click="selectCycle">
+                <div class="dot-item" :class="{ bigger: (setCycle == 3) }"></div>
+              </div>
+
+              <div class="circle-text">
+                <span>PLAN <br>DEPLOYMENT</span>
+              </div>
+            </div>
+
+            <div class="single-item">
+              <div class="circle-item" id="4" @click="selectCycle">
+                <div class="dot-item" :class="{ bigger: (setCycle == 4) }"></div>
+              </div>
+
+              <div class="circle-text">
+                <span>DEPLOY</span>
+              </div>
+            </div>
+
+            <div class="single-item">
+              <div class="circle-item" id="5" @click="selectCycle">
+                <div class="dot-item" :class="{ bigger: (setCycle == 5) }"></div>
+              </div>
+
+              <div class="circle-text">
+                <span>OPTIMIZE</span>
+              </div>
+            </div>
+
+            <div class="tapper">
+              <PagesHomeMethodologyCursorClick />
+              
+              <div class="tapper-text">
+                <span class="mobile-show">Tap each point</span>
+                <span class="desktop-show">Click through each point</span>
+              </div>
+            </div>
+        </div>
+
+        <div class="methodology-slider" :class="{ open: openCycleWindow }">
+          <div class="container methodology-container">
+            <div class="methodology-upper">
+              <div class="slider-counter">
+                <span><strong>0{{ setCycle }}</strong>/05</span>
+              </div>
+
+              <div class="close" @click="closeCycleWindow">
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <div class="slider-content">
+              <div class="single-slider" :class="{ view: (setCycle == 1) }">
+                <h3>Discover</h3>
+
+                <div class="single-slider-body">
+                  <p>Each assignment starts with an exploration of the client needs by extracting and understanding the real business requirements.</p>
+                  <p>We draw up technical specifications and architect the eventual solution.</p>
+                  <p>The discovery phase closes by us defining key deliverables and timelines for the eventual project</p>
+                </div>
+              </div>
+
+              <div class="single-slider" :class="{ view: (setCycle == 2) }">
+                <h3>Build</h3>
+
+                <div class="single-slider-body">
+                  <p>The technical specifications are built using industry-standard services, rock-solid skills and industry best-practice.</p>
+                  <p>All infrastructure is built to be resilient, to cater for current and future projected needs and to last into the future.</p>
+                </div>
+              </div>
+
+              <div class="single-slider" :class="{ view: (setCycle == 3) }">
+                <h3>Plan Deployment</h3>
+
+                <div class="single-slider-body">
+                  <p>Plan the deployment process to be carried out based on the current infrastructure in place. It is important that the migration process is smooth, the operation is not impacted and that there are safeguards along the way.</p>
+                </div>
+              </div>
+
+              <div class="single-slider" :class="{ view: (setCycle == 4) }">
+                <h3>Deploy</h3>
+
+                <div class="single-slider-body">
+                  <p>Execute the migration plan and ensure that measures are in place to ensure that the plan has been executed successfully and that the implemented infrastructure is delivering the intended results.</p>
+                </div>
+              </div>
+
+              <div class="single-slider" :class="{ view: (setCycle == 5) }">
+                <h3>Optimize</h3>
+
+                <div class="single-slider-body">
+                  <p>Live infrastructure operates in dynamic online and business environments. Preventive maintenance is crucial to ensure that it will cope with the multiple unplanned changes in these environments.</p>
+                  <p>Monitoring is crucial to put in place in order to keep confirming that, despite the environment changes, the infrastructure is still performing up to expectations.</p>
+                  <p>Infrastructure optimisation also includes constant exploration of how costs can be better managed or reduced based on technology advances or re-configuration.  Any changes will follow this cycle once more from the Discovery stage onwards...</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="navigators">
+              <div class="prev-button navig" id="prev" @click="cycleNavigator"></div>
+
+              <div class="next-button navig" id="next" @click="cycleNavigator"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -397,8 +526,58 @@ export default {
                       }
                   },
               ]
-            }
+            },
+            setCycle: 1,
+            openCycleWindow: false,
+            isMobile: false
         }
     },
+    methods: {
+      selectCycle(event) {
+        this.setCycle = event.currentTarget.id
+        if(this.isMobile == true){
+          this.openCycleWindow = true
+          document.documentElement.style.overflowY = 'hidden'
+        }
+      },
+      closeCycleWindow() {
+        if(this.isMobile == true){
+          this.openCycleWindow = false
+          document.documentElement.style.overflowY = 'auto'
+        }
+      },
+      cycleNavigator(event){
+        if(event.currentTarget.id == 'prev'){
+          if(this.setCycle == 1){
+            this.setCycle = 5
+          }else{
+            this.setCycle--
+          }
+        }else if(event.currentTarget.id == 'next'){
+          if(this.setCycle == 5){
+            this.setCycle = 1
+          }else{
+            this.setCycle++
+          }
+        }
+      },
+      // Method called when window resize is triggered from mounted
+      getWindowWidth() {
+        if(window.innerWidth < 992){
+          this.isMobile = true
+          return
+        }else{
+          this.isMobile = false
+        }
+      }
+    },
+    mounted() {
+      // On window resize and load, execute method getWindowWidth
+      window.addEventListener('resize', this.getWindowWidth)
+      window.addEventListener('load', this.getWindowWidth)
+    },
+    created() {
+      this.getWindowWidth()
+    }
 }
 </script>
