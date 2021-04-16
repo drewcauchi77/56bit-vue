@@ -6,8 +6,7 @@
             <div class="introduction-content">
               <h1 class="introduction-title">AWS</h1>
 
-              <p class="introduction-body">56Bit provides peace of mind to technology-driven business through best-in- class AWS solutions.</p>
-              <p class="introduction-body">We provide highly-qualified experts who consult, design, build and/or maintain complex cloud architectures on AWS, working hand-in-hand with your software development teams.</p>
+              <p class="introduction-body">56Bit provides peace of mind to technology-driven business through best-in- class AWS solutions.We provide highly-qualified experts who consult, design, build and/or maintain complex cloud architectures on AWS, working hand-in-hand with your software development teams.</p>
               <p class="introduction-body">We have a long track record of successfully delivering projects involving the below AWS technologies.</p>
             </div>
         </div>
@@ -59,13 +58,13 @@ export default {
   // The Nuxt provider to change the page title
   head() {
     return {
-      title: '56Bit - AWS',
+      title: '56Bit - AWS Service Delivery Partners',
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
           hid: 'description',
           name: 'description',
-          content: '56Bit delivers best-practice cloud expertise to organisations of any size'
+          content: 'Our Amazon Web Services Service Delivery Partnership provides a tangible endorsement and trust mark to 56Bit’s commitment'
         }
       ]
     }

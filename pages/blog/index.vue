@@ -59,7 +59,7 @@ export default {
     // The Nuxt provider to change the page title
     head() {
       return {
-        title: '56Bit - Blog',
+        title: '56Bit - Blog Page',
         meta: [
           // hid is used as unique identifier. Do not use `vmid` for it as it will not work
           {

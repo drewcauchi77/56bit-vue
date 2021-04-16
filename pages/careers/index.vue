@@ -211,13 +211,13 @@ export default {
   // The Nuxt provider to change the page title
   head() {
     return {
-      title: '56Bit - Careers',
+      title: '56Bit - Join the 56Bit winning team',
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
           hid: 'description',
           name: 'description',
-          content: '56Bit delivers best-practice cloud expertise to organisations of any size'
+          content: 'Are you interested in cloud infrastructure? Interested in DevOps? Do you have an eye for detail? Are you very client-centred? Do you enjoy discussing technology with like-minded professionals? Do you have or are you working on AWS or similar certifications? Do you think you have what it takes to be part of the 56Bit dream?'
         }
       ]
     }

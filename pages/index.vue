@@ -85,6 +85,18 @@
                 </div>
 
                 <div class="single-services">
+                  <NuxtLink to="/services#migration" class="single-service-link">
+                    <div class="single-services-content">
+                        <div class="service-icon">
+                          <PagesHomeServicesMigration />
+                        </div>
+                        <h3 class="service-title">Migration</h3>
+                        <p class="service-text">Guiding the smooth move to a cloud infrastructure or between cloud infrastructures</p>
+                    </div>
+                  </NuxtLink>
+                </div>
+
+                <div class="single-services">
                   <NuxtLink to="/services#maintain" class="single-service-link">
                     <div class="single-services-content">
                         <div class="service-icon">
@@ -104,18 +116,6 @@
                         </div>
                         <h3 class="service-title">Consultancy</h3>
                         <p class="service-text">Expert input from experienced and AWS-certified personnel</p>
-                    </div>
-                  </NuxtLink>
-                </div>
-
-                <div class="single-services">
-                  <NuxtLink to="/services#migration" class="single-service-link">
-                    <div class="single-services-content">
-                        <div class="service-icon">
-                          <PagesHomeServicesMigration />
-                        </div>
-                        <h3 class="service-title">Migration</h3>
-                        <p class="service-text">Guiding the smooth move to a cloud infrastructure or between cloud infrastructures</p>
                     </div>
                   </NuxtLink>
                 </div>
@@ -358,7 +358,7 @@
         <div class="expertise-details">
           <h2 class="expertise-title">Qualified AWS expertise at your service</h2>
 
-          <p class="expertise-content">Our partnership with Amazon Web Services provides additional quality and value to our clients. At 56Bit, AWS gurus exceed client expectations with their value delivery. With the additional backup and support from Amazon Web Services, new heights are achieved in both service delivery and customer engagement.</p>
+          <p class="expertise-content">Our Amazon Web Services Service Delivery Partnership provides a tangible endorsement and trust mark to 56Bit’s commitment to adding value through quality in delivering professional services to clients.  Our AWS experts continuously seek to exceed client expectations in driving value to our clients and, with our relationship and the additional backup and support of Amazon Web Services, we keep pushing boundaries and achieving new levels of service delivery and client engagement.</p>
 
           <div class="expertise-button button">
             <NuxtLink to="/aws">

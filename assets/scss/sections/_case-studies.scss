@@ -132,8 +132,8 @@
                             'casebutton caseimage';
                         grid-column-gap: 30px;
                         grid-row-gap: 30px;
-                        width: 99% !important;
-                        margin: 0 0.5%;
+                        width: 98% !important;
+                        margin: 0 1%;
                         min-height: 420px;
                         .single-case-study-image{
                             width: 100%;
@@ -200,10 +200,10 @@
                         bottom: -30px;
                     }
                     .slick-prev{
-                        right: calc(0.5% + 60px);
+                        right: calc(1% + 60px);
                     }
                     .slick-next{
-                        right: 0.5%;
+                        right: 1%;
                     }
                 }
             }
@@ -246,17 +246,11 @@
                     .single-case-link{
                         grid-column-gap: 140px;
                         grid-template-rows: auto 200px 70px;
-                        width: 100% !important;
-                        margin: 0px;
+                        width: 98% !important;
+                        margin: 0 1%;
                         .read-more-button{
                             align-self: end;
                         }
-                    }
-                    .slick-prev{
-                        right: 60px;
-                    }
-                    .slick-next{
-                        right: 0px;
                     }
                 }
             }

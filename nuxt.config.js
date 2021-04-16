@@ -5,14 +5,14 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '56Bit',
+    title: 'Welcome to 56Bit',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '56Bit delivers best-practice cloud expertise to organisations of any size' }
+      { hid: 'description', name: 'description', content: 'Architect, Deploy and Manage Cloud-Native Architectures with Perpetual Availability and Top-Notch Expert advice Supporting your Business Needs' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon-56bit.ico' },

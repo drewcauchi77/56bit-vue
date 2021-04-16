@@ -58,7 +58,6 @@ export default {
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 infinite: true,
-                fade: true,
                 speed: 1000,
                 responsive: [
                     {

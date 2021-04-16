@@ -67,7 +67,7 @@ export default {
                 {
                 hid: 'description',
                 name: 'description',
-                content: '56Bit delivers best-practice cloud expertise to organisations of any size'
+                content: this.caseStudies.CaseStudyExcerpt,
                 }
             ]
         }

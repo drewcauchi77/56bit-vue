@@ -278,7 +278,7 @@
 
             <div class="single-service-button button">
               <NuxtLink to="/contact">
-                <span class="button-text">Ensure platform availability</span>
+                <span class="button-text">Supplement my team</span>
               </NuxtLink>
             </div>
           </div>
@@ -305,13 +305,13 @@ export default {
   // The Nuxt provider to change the page title
   head() {
     return {
-      title: '56Bit - Services',
+      title: '56Bit - Cloud Infrastructure Services',
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
           hid: 'description',
           name: 'description',
-          content: '56Bit delivers best-practice cloud expertise to organisations of any size'
+          content: 'Architecture and Design, Prototyping, Implementation, Migration, Maintenance, Consultation, Staff Augmentation'
         }
       ]
     }
