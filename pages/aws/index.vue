@@ -6,7 +6,9 @@
             <div class="introduction-content">
               <h1 class="introduction-title">AWS</h1>
 
-              <p class="introduction-body">56Bit provides peace of mind to technology-driven business through best-in- class AWS solutions. We provide highly-qualified experts who consult, design, build and/or maintain complex cloud architectures on AWS, working hand-in-hand with your software development teams. We have a long track record of successfully delivering projects involving the below AWS technologies.</p>
+              <p class="introduction-body">56Bit provides peace of mind to technology-driven business through best-in- class AWS solutions. </p>
+              <p class="introduction-body">We provide highly-qualified experts who consult, design, build and/or maintain complex cloud architectures on AWS, working hand-in-hand with your software development teams. </p>
+              <p class="introduction-body">We have a long track record of successfully delivering projects involving the below AWS technologies.</p>
             </div>
         </div>
       </div>
