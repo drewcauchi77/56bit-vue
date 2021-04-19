@@ -217,7 +217,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'Are you interested in cloud infrastructure? Interested in DevOps? Do you have an eye for detail? Are you very client-centred? Do you enjoy discussing technology with like-minded professionals? Do you have or are you working on AWS or similar certifications? Do you think you have what it takes to be part of the 56Bit dream?'
+          content: 'Do you think you have what it takes to be part of the 56Bit vision? We look forward to hearing from you.'
         }
       ]
     }

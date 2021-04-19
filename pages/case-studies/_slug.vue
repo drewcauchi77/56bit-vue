@@ -67,7 +67,7 @@ export default {
                 {
                 hid: 'description',
                 name: 'description',
-                content: this.caseStudies.CaseStudyExcerpt,
+                content: 'Best practise implementation, high availability, auto-healing, disaster recovery, DevOps, DevSecOps, Infrastructure as Code (IaC), DDoS protection.',
                 }
             ]
         }

@@ -67,7 +67,7 @@ export default {
           {
             hid: 'description',
             name: 'description',
-            content: '56Bit customers` Cloud Infrastructure platforms; best practise implementation, high availability, auto-healing,  disaster recovery, DevOps, DevSecOps, Infrastructure as Code (IaC), DDoS protection.'
+            content: 'Best practise implementation, high availability, auto-healing, disaster recovery, DevOps, DevSecOps, Infrastructure as Code (IaC), DDoS protection.'
           }
         ]
       }
