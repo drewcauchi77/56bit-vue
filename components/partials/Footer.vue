@@ -50,11 +50,11 @@
               </NuxtLink>
             </li>
 
-            <!-- <li class="navigation-item">
+            <li class="navigation-item">
               <NuxtLink to="/blog" class="navigation-link">
                 <span class="navigation-text">Blog</span>
               </NuxtLink>
-            </li> -->
+            </li>
 
             <li class="navigation-item">
               <NuxtLink to="/aws" class="navigation-link">

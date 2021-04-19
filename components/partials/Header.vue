@@ -91,11 +91,11 @@
               </NuxtLink>
             </li>
 
-            <!-- <li class="primary-navigation-item" @click="showMobileMenu = !showMobileMenu">
+            <li class="primary-navigation-item" @click="showMobileMenu = !showMobileMenu">
               <NuxtLink to="/blog" class="navigation-link">
                 Blog
               </NuxtLink>
-            </li> -->
+            </li>
 
             <li class="primary-navigation-item" @click="showMobileMenu = !showMobileMenu">
               <NuxtLink to="/aws" class="navigation-link">
@@ -124,7 +124,7 @@
 <style>
   @media only screen and (min-width: 992px){
     .header-section .header-container .main-menu .header-menu .navigation-list{
-      grid-template-columns: repeat(6, auto);
+      grid-template-columns: repeat(7, auto);
     }
   }
 </style>

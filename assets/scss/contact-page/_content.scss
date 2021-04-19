@@ -130,6 +130,11 @@
                     .form-section{
                         form{
                             position: relative;
+                            p{
+                                select{
+                                    width: 350px;
+                                }
+                            }
                             .submit-button{
                                 button{
                                     font-size: 14px;
