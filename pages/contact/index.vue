@@ -85,6 +85,8 @@
 </template>
 
 <script>
+import emailjs from 'emailjs-com';
+
 export default {
   transition: 'slide-bottom',
   data() {
@@ -116,7 +118,7 @@ export default {
     }
   },
   methods: {
-    sendMessage() {
+    sendMessage(e) {
       this.loading = true
       this.error = false
       this.success = false
@@ -131,6 +133,22 @@ export default {
         }).then(response => {
           this.success = true
           this.error = false
+
+          try{
+            emailjs.sendForm('service_6l8k173', 'template_17kl15o', e.target, 'user_DjK1gDzJhMMYUKUytDr5V', {
+              company: this.company,
+              query: this.query,
+              email: this.email,
+              name: this.name
+            })
+          }catch{
+            console.log(error)
+          }
+
+          this.company = ''
+          this.query = ''
+          this.email = ''
+          this.name = ''
         }).catch(error => {
           this.error = true
         }).finally(() => {

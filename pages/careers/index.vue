@@ -85,13 +85,13 @@
               </select>
 
               <label for="name">First Name</label>
-              <input type="text" name="name" placeholder="First Name*" required>
+              <input v-model="first_name" type="text" name="name" placeholder="First Name*" required>
 
               <label for="surname">Last Name</label>
-              <input type="text" name="surname" placeholder="Last Name*" required>
+              <input v-model="last_name" type="text" name="surname" placeholder="Last Name*" required>
 
               <label for="email">Email</label>
-              <input type="email" name="email" placeholder="Email*" required>
+              <input v-model="email" type="email" name="email" placeholder="Email*" required>
 
               <div class="hidden">
                 <label>Don’t fill this out if you're human: </label>
@@ -99,7 +99,7 @@
               </div>
 
               <label for="phone">Phone</label>
-              <input type="tel" name="phone" placeholder="Phone">
+              <input v-model="phone" type="tel" name="phone" placeholder="Phone">
 
               <div class="file-uploads">
                 <div class="upload-section">
@@ -162,6 +162,7 @@
 </template>
 
 <script>
+import emailjs from 'emailjs-com';
 import { careersQuery } from '~/queries/collection/careers/careers'
 
 export default {
@@ -185,6 +186,11 @@ export default {
       isBot: false,
       // The desired position selected
       position: '',
+      // Other fields two way binded
+      first_name: '',
+      last_name: '',
+      email: '',
+      phone: '',
       // The input field that should not be filled in
       website: null,
       // Toggler for the application form to slide
@@ -333,6 +339,25 @@ export default {
             .then(res => {
               this.success = true
               this.error = false
+
+              var emailTemplateParams = {
+                name: this.first_name,
+                surname: this.last_name,
+                email: this.email,
+                position: this.position,
+                phone: this.phone
+              }
+
+              emailjs.send('service_6l8k173', 'template_4i8ynrg', emailTemplateParams, 'user_DjK1gDzJhMMYUKUytDr5V')
+
+              this.position = ''
+              this.first_name = ''
+              this.last_name = ''
+              this.email = ''
+              this.phone = ''
+              this.resumeFileName = 'Upload CV'
+              this.certificationsFileName = 'Upload Certifications'
+              this.coverLetterFileName = 'Upload Cover Letter'
             }).catch(error => {
               this.error = true
             }).finally(() => {
@@ -342,7 +367,6 @@ export default {
           this.error = true
           this.loading = false
         }
-        
       }
     }
   },
