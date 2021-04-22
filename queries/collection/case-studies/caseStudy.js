@@ -15,6 +15,11 @@ export const caseStudyQuery = gql`
                 alternativeText
             }
             CaseStudyContent
+            CaseStudyImages{
+                url
+                alternativeText
+                caption
+            }
         }
     }
 `

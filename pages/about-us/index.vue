@@ -108,10 +108,10 @@
                           <p>Coming from a technical infrastructure background, Stefan worked on many projects relating to infrastructure, operations and systems maintenance. He enjoys a very practical approach to problem solving and employs vast knowledge and experience to deliver the best solutions to different scenarios he encounters. Despite being very technical at the core, Stefan also bridged into the business aspect of technical projects through his involvement in project management.</p>
                         </li>
                         <li>
-                          <p>Stefan’s development led him to port his skills to the cloud where he moved into AWS and Azure infrastructures and he combined his technical and project management background to evolve into becoming a devops champion.</p>
+                          <p>Stefan’s development led him to port his skills to the cloud where he moved into AWS and Azure infrastructures and he combined his technical and project management background to evolve into becoming a DevOps champion.</p>
                         </li>
                         <li>
-                          <p>In founding 56Bit, Stefan sought to combine his devops drive with his passion for cloud infrastructure and a firm belief in quality delivery.</p>
+                          <p>In founding 56Bit, Stefan sought to combine his DevOps drive with his passion for cloud infrastructure and a firm belief in quality delivery.</p>
                         </li>
                       </ul>
                     </div>

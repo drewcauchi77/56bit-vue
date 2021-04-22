@@ -40,7 +40,7 @@
                   <p>56Bit starts the process by carrying out a review of the existing infrastructure in order to understand the client’s operations and demands of the infrastructure. 56Bit believe that the present is the ideal place to start when looking at the future.</p>
                 </li>
                 <li>
-                  <strong>Infrastructure audit</strong><br>
+                  <strong>Infrastructure Audit</strong><br>
                   <p>An audit of the current infrastructure and systems is carried out in order to document and understand the configuration, level of usage, load and efficiency of the current setups. This information is crucial for ensuring stability and continuity at later stages of the project.</p>
                 </li>
                 <li>
@@ -48,11 +48,11 @@
                   <p>Conducting scoping sessions with the client to understand what the desired company state is and what requirements will be placed on the resulting infrastructure. 56Bit wants to ensure that, while the present is understood, any designed architecture will take the client well into the future.</p>
                 </li>
                 <li>
-                  <strong>Design options</strong>
+                  <strong>Design Options</strong>
                   <p>The wealth of information collected on the current systems and the desired client state are put together to draw up one or more options of how the architecture could be designed for the client to reach the desired state and how cloud services can be leveraged in this process. Different topologies are considered as well as the various components required such as AWS Services, Azure Services or other relevant Service components. These options are all studied in detail and the concepts are tested from various angles for suitability, scalability, cost efficiency and stability. Basing this exercise on a study of the current systems together with the desired client objectives gives peace of mind to the client that any solutions provided are addressing the real client’s business needs. Options are presented to and discussed with the client.</p>
                 </li>
                 <li>
-                  <strong>Future proofing</strong>
+                  <strong>Future Proofing</strong>
                   <p>Client discussion and further study into client projections leads to 56Bit carrying out an infrastructure forecasting exercise. This is important to understand the present and future demands on the infrastructure in order to ensure that actual load is understood at the start. Any infrastructure options being studied are tested against the forecasted loads to ensure that the design is as future-proof as possible.</p>
                 </li>
                 <li>
@@ -89,11 +89,11 @@
                   <p>56Bit’s architecture options are based on client needs and aspirations and there is frequently more than one option of providing a solution, each with its pros and cons.</p>
                 </li>
                 <li>
-                  <strong>Devops</strong><br>
+                  <strong>DevOps</strong><br>
                   <p>56Bit combines specific cultural philosophies, tools, proprietary methodologies and internal practices to enable delivery of infrastructures at a high velocity. This ensures that 56Bit can deliver faster than traditionally-oriented infrastructure companies ensuring that we can better serve our customers.</p>
                 </li>
                 <li>
-                  <strong>Ensure cost efficiency</strong>
+                  <strong>Ensure Cost Efficiency</strong>
                   <p>In order to ensure that the client invests where the largest return is given, 56Bit is able to work with the client to provide prototypes of the different options. Prototypes are tested with the client in order to understand in practice which option will give the best results.</p>
                 </li>
               </ul>
@@ -134,7 +134,7 @@
                     -	Performance Resiliency <br>
                     -	Security <br>
                     -	Infrastructure as Code <br>
-                    -	Cost efficiency <br>
+                    -	Cost Efficiency <br>
                   </p>
                 </li>
               </ul>
@@ -265,7 +265,7 @@
                   <p>56Bit are ideally positioned to provide certified and experienced cloud professionals that can be used to augment existing teams for capacity building or to bridge skills-gaps</p>
                 </li>
                 <li>
-                  <p>Capacity building - This service can help companies cope with increases in demand on their internal teams by using 56Bit professionals as additional hands-on-deck to carry out the work. These resources can be used as an extension of the client team and they can also be managed by the client team directly providing a seamless operational experience to the client.</p>
+                  <p>Capacity Building - This service can help companies cope with increases in demand on their internal teams by using 56Bit professionals as additional hands-on-deck to carry out the work. These resources can be used as an extension of the client team and they can also be managed by the client team directly providing a seamless operational experience to the client.</p>
                 </li>
                 <li>
                   <p>Bridging a Skills Gap - Where internal teams have specific gaps in technical skills, 56Bit resources can be pulled on board where required as part of the internal team to deliver consultancy relating to the specific gap at hand. These resources can be used by the client team as a pure extension of the team and they can also be managed in that way.</p>
