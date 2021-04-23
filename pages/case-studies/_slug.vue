@@ -29,8 +29,8 @@
                 </div>
             </div>
 
-            <div class="lightbox" v-if="lightBox" @click="closeLightbox">
-                <div class="lightbox-content">
+            <div class="lightbox" v-if="lightBox">
+                <div class="lightbox-content" @click.self="closeLightbox">
                     <div class="close" @click="closeLightbox"></div>
                     <img :src="imageSource">
                 </div>
