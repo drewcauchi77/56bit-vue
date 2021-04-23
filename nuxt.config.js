@@ -1,6 +1,6 @@
 export default {
   env: {
-    strapiBaseUri: process.env.API_URL || "https://admin-56bit.stevesandco.com"
+    strapiBaseUri: process.env.API_URL || "https://api.56bit.com"
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -55,7 +55,7 @@ export default {
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: "https://admin-56bit.stevesandco.com/graphql"
+        httpEndpoint: "https://api.56bit.com/graphql"
       }
     }
   },

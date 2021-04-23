@@ -1,0 +1,78 @@
+.single-case-study-main{
+    .post-section{
+        .post-container{
+            .post-images{
+                .picture{
+                    margin-bottom: 30px;
+                    display: grid;
+                    grid-template-rows: auto auto;
+                    grid-row-gap: 20px;
+                    img{
+                        cursor: pointer;
+                        width: 100%;
+                        height: auto;
+                    }
+                    span{
+                        text-align: center;
+                        font-style: italic;
+                    }
+                    &:last-child{
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+        .lightbox{
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: rgba(24, 24, 29, 0.6);
+            .lightbox-content{
+                position: relative;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                .close{
+                    height: 40px;
+                    width: 40px;
+                    margin-left: auto;
+                    position: relative;
+                    cursor: pointer;
+                    top: 20px;
+                    right: 20px;
+                    &:after{
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        content: "\d7";
+                        font-size: 55px; 
+                        color: $white;
+                        text-align: center;
+                        height: fit-content;
+                        margin: auto;
+                    }
+                }
+                img{
+                    width: auto;
+                    max-width: 98%;
+                    height: auto;
+                    max-height: 98%;
+                    height: auto;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}

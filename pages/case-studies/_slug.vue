@@ -20,8 +20,23 @@
                 </div>
 
                 <div class="post-content" v-if="caseStudies.CaseStudyContent" v-html="caseStudies.CaseStudyContent"></div>
+
+                <div class="post-images" v-if="caseStudies.CaseStudyImages">
+                    <div class="picture" v-for="(image, index) in caseStudies.CaseStudyImages" :key="index">
+                        <img :src="api_url + image.url" :alt="image.alternativeText" @click="copySource">
+                        <span v-html="image.caption"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lightbox" v-if="lightBox" @click="closeLightbox">
+                <div class="lightbox-content">
+                    <div class="close" @click="closeLightbox"></div>
+                    <img :src="imageSource">
+                </div>
             </div>
         </section>
+
     </main>
 </template>
 
@@ -36,6 +51,8 @@ export default {
         // Returning the data short notation, an array with 1 value according to the where slug condition in caseStudy.js
         caseStudies: {},
         api_url: process.env.strapiBaseUri,
+        imageSource: '',
+        lightBox: false
     }),
     apollo: {
         caseStudies: {
@@ -50,14 +67,6 @@ export default {
             update: data => data.caseStudies[0]
         }
     },
-    // computed: {
-    //     // Since the content is a chunk and images are to be included in the content, we would need to include the API url
-    //     // The images without API url would return of the current website
-    //     cleanContent : function () {
-    //         // Search for uploads and attach api_url to it - then v-html back the content 
-    //         return this.caseStudies.CaseStudyContent.split('/uploads/').join(`${this.api_url}/uploads/`)
-    //     }
-    // },
     // The Nuxt provider to change the page title
     head() {
         return {
@@ -76,6 +85,15 @@ export default {
         // Method called by the click of the Back button which sends the router back in history to get the last page before
         goBack() {
             this.$router.go(-1)
+        },
+        copySource(img) {
+            this.lightBox = true
+            this.imageSource = img.srcElement.src
+            document.documentElement.style.overflowY = 'hidden'
+        },
+        closeLightbox() {
+            this.lightBox = false
+            document.documentElement.style.overflowY = 'auto'
         }
     }
 }
