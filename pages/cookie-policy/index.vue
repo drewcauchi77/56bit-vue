@@ -125,19 +125,27 @@
               </tr>
               <tr>
                 <td>_ga</td>
-                <td>emailjs.com</td>
+                <td>56bit.com</td>
                 <td>2 years</td>
                 <td>3rd party</td>
-                <td>Performance</td>
-                <td>Google Analytics for emailjs.com. Emailjs.com is used to send messages through the contact form.</td>
+                <td>Analytics</td>
+                <td>This cookie is installed by Google Analytics. The cookie is used to calculate visitor, session, campaign data and keep track of site usage for the site's analytics report. The cookies store information anonymously and assign a randomly generated number to identify unique visitors.</td>
               </tr>
               <tr>
                 <td>_gid</td>
-                <td>emailjs.com</td>
+                <td>56bit.com</td>
                 <td>1 day</td>
                 <td>3rd party</td>
+                <td>Analytics</td>
+                <td>This cookie is installed by Google Analytics. The cookie is used to store information of how visitors use a website and helps in creating an analytics report of how the website is doing. The data collected including the number visitors, the source where they have come from, and the pages visted in an anonymous form.</td>
+              </tr>
+              <tr>
+                <td>_gat</td>
+                <td>56bit.com</td>
+                <td>1 minute</td>
+                <td>3rd party</td>
                 <td>Performance</td>
-                <td>Google Analytics for emailjs.com. Emailjs.com is used to send messages through the contact form.</td>
+                <td>This cookies is installed by Google Universal Analytics to throttle the request rate to limit the colllection of data on high traffic sites.</td>
               </tr>
             </table>
           </div>
