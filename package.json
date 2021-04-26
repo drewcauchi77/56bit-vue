@@ -21,7 +21,7 @@
     "emailjs-com": "^2.6.4",
     "graphql-tag": "^2.11.0",
     "nuxt": "^2.14.12",
-    "nuxt-cookie-control": "^1.9.7",
+    "vue-cookie-accept-decline": "^5.4.0",
     "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {

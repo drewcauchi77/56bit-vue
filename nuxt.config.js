@@ -41,11 +41,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/apollo',
-    '@nuxtjs/axios',
-    ['nuxt-cookie-control', {
-      barPosition: "bottom-full",
-      controlButton: false,
-    }]
+    '@nuxtjs/axios'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -70,7 +66,7 @@ export default {
 
   ssr: false,
 
-  target:static,
+  // target:static,
 
   server: {
     port: 8080, // default: 3000
