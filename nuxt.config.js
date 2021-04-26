@@ -66,7 +66,7 @@ export default {
 
   ssr: false,
 
-  // target:static,
+  target: static,
 
   server: {
     port: 8080, // default: 3000
