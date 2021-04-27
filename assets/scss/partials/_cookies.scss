@@ -22,7 +22,6 @@
         }
         .cookie__floating__buttons{
             display: grid;
-            grid-template-columns: repeat(2, 120px);
             grid-column-gap: 20px;
             justify-content: center;
             button{
@@ -62,7 +61,6 @@
             }
             .cookie__floating__buttons{
                 grid-template-columns: unset;
-                grid-template-rows: repeat(2, 50px);
                 grid-row-gap: 30px;
                 align-content: center;
                 button{
